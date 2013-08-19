@@ -28,6 +28,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "626FDE2D17C153B60088B7FF"
+               BuildableName = "InfinityPlayerTest.octest"
+               BlueprintName = "InfinityPlayerTest"
+               ReferencedContainer = "container:InfinityPlayer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
