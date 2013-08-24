@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define AlbumCoverSize 320
+
 @interface UIImageView (GaussianBlur)
 
 -(void) applyGaussianBlur:(float)blurFactor;

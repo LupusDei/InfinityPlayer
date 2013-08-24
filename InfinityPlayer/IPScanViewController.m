@@ -30,9 +30,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-//    NSArray *items = [IPMediaInspector getAllMedia];
-//    NSLog(@"items: %@", items);
-    self.imageNames = @[@"kanye_album.png", @"marcusEatonAlbum.png", @"muse_the_resistance.png", @"743c90c1.jpg", @"born_sinner.jpeg"];
+    NSArray *items = [IPMediaInspector getAllMedia];
+    NSLog(@"items: %@", items);
+    self.imageNames = @[@"chronic.png", @"MurakKanye.png", @"drake-nothing-was-the-same-artwork-2.png", @"743c90c1.jpg", @"born_sinner.jpeg"];
     self.currentSongCollectionView.delegate = self;
     self.currentSongCollectionView.dataSource = self;
 }
@@ -50,7 +50,7 @@
     UIImage *albumImage = [UIImage imageNamed:imageName];
     
     [cell.blurredBackgroundImageView setImage:backgroundImage];
-    [cell.blurredBackgroundImageView applyGaussianBlurWithFactor:9 andExpandImageByFactor:2.0
+    [cell.blurredBackgroundImageView applyGaussianBlurWithFactor:4 andExpandImageByFactor:2.5
      ];
     [cell.albumCoverImageView setImage:albumImage];
     

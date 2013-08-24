@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		497B4B38DBB34A1D9EEE7157 /* libPods-InfinityPlayerTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97CC2A2CA6407A93B70EEE /* libPods-InfinityPlayerTest.a */; };
+		622B94DF17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94DE17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png */; };
+		622B94E217C836D700B71523 /* chronic.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94E017C836D700B71523 /* chronic.png */; };
+		622B94E317C836D700B71523 /* MurakKanye.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94E117C836D700B71523 /* MurakKanye.png */; };
 		6232348017C1A783002BE554 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6232347F17C1A783002BE554 /* MediaPlayer.framework */; };
 		6232348617C1A999002BE554 /* 743c90c1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6232348317C1A999002BE554 /* 743c90c1.jpg */; };
-		6232348717C1A999002BE554 /* marcusEatonAlbum.png in Resources */ = {isa = PBXBuildFile; fileRef = 6232348417C1A999002BE554 /* marcusEatonAlbum.png */; };
-		6232348817C1A999002BE554 /* muse_the_resistance.png in Resources */ = {isa = PBXBuildFile; fileRef = 6232348517C1A999002BE554 /* muse_the_resistance.png */; };
 		6232348C17C1AA8E002BE554 /* IPSongCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6232348B17C1AA8E002BE554 /* IPSongCVCell.m */; };
 		6232349017C1B022002BE554 /* UIImageView+GaussianBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 6232348F17C1B022002BE554 /* UIImageView+GaussianBlur.m */; };
 		6232349217C1B27E002BE554 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6232349117C1B27E002BE554 /* CoreImage.framework */; };
 		6232349417C1B287002BE554 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6232349317C1B287002BE554 /* ImageIO.framework */; };
-		6232349617C1BB17002BE554 /* kanye_album.png in Resources */ = {isa = PBXBuildFile; fileRef = 6232349517C1BB17002BE554 /* kanye_album.png */; };
 		6232349817C1BBA7002BE554 /* born_sinner.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6232349717C1BBA7002BE554 /* born_sinner.jpeg */; };
 		626FDE0D17C153480088B7FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0C17C153480088B7FF /* UIKit.framework */; };
 		626FDE0F17C153480088B7FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0E17C153480088B7FF /* Foundation.framework */; };
@@ -39,17 +39,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		622B94DE17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drake-nothing-was-the-same-artwork-2.png"; sourceTree = "<group>"; };
+		622B94E017C836D700B71523 /* chronic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chronic.png; sourceTree = "<group>"; };
+		622B94E117C836D700B71523 /* MurakKanye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MurakKanye.png; sourceTree = "<group>"; };
 		6232347F17C1A783002BE554 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		6232348317C1A999002BE554 /* 743c90c1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 743c90c1.jpg; sourceTree = "<group>"; };
-		6232348417C1A999002BE554 /* marcusEatonAlbum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marcusEatonAlbum.png; sourceTree = "<group>"; };
-		6232348517C1A999002BE554 /* muse_the_resistance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = muse_the_resistance.png; sourceTree = "<group>"; };
 		6232348A17C1AA8E002BE554 /* IPSongCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPSongCVCell.h; path = cells/IPSongCVCell.h; sourceTree = "<group>"; };
 		6232348B17C1AA8E002BE554 /* IPSongCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPSongCVCell.m; path = cells/IPSongCVCell.m; sourceTree = "<group>"; };
 		6232348E17C1B022002BE554 /* UIImageView+GaussianBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+GaussianBlur.h"; path = "Categories/UIImageView+GaussianBlur.h"; sourceTree = "<group>"; };
 		6232348F17C1B022002BE554 /* UIImageView+GaussianBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+GaussianBlur.m"; path = "Categories/UIImageView+GaussianBlur.m"; sourceTree = "<group>"; };
 		6232349117C1B27E002BE554 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6232349317C1B287002BE554 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		6232349517C1BB17002BE554 /* kanye_album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanye_album.png; sourceTree = "<group>"; };
 		6232349717C1BBA7002BE554 /* born_sinner.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = born_sinner.jpeg; sourceTree = "<group>"; };
 		626FDE0917C153480088B7FF /* InfinityPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfinityPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		626FDE0C17C153480088B7FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -124,10 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				6232348317C1A999002BE554 /* 743c90c1.jpg */,
+				622B94E017C836D700B71523 /* chronic.png */,
+				622B94E117C836D700B71523 /* MurakKanye.png */,
 				6232349717C1BBA7002BE554 /* born_sinner.jpeg */,
-				6232349517C1BB17002BE554 /* kanye_album.png */,
-				6232348417C1A999002BE554 /* marcusEatonAlbum.png */,
-				6232348517C1A999002BE554 /* muse_the_resistance.png */,
+				622B94DE17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png */,
 			);
 			path = AlbumArt;
 			sourceTree = "<group>";
@@ -187,6 +187,7 @@
 		626FDE1217C153480088B7FF /* InfinityPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				62C2C6EA17C17CB800478B15 /* MainStoryboard.storyboard */,
 				6232348D17C1AE7B002BE554 /* Blurs */,
 				6232348917C1A9A8002BE554 /* images */,
 				6232348117C1A815002BE554 /* MediaDisplay */,
@@ -195,7 +196,6 @@
 				626FDE1C17C153480088B7FF /* IPAppDelegate.m */,
 				62C2C6E417C17B8D00478B15 /* IPMediaInspector.h */,
 				62C2C6E517C17B8D00478B15 /* IPMediaInspector.m */,
-				62C2C6EA17C17CB800478B15 /* MainStoryboard.storyboard */,
 			);
 			path = InfinityPlayer;
 			sourceTree = "<group>";
@@ -284,6 +284,11 @@
 				CLASSPREFIX = IP;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = JMM;
+				TargetAttributes = {
+					626FDE0817C153480088B7FF = {
+						DevelopmentTeam = 2BRYAM5Q52;
+					};
+				};
 			};
 			buildConfigurationList = 626FDE0417C153480088B7FF /* Build configuration list for PBXProject "InfinityPlayer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -310,13 +315,13 @@
 			files = (
 				626FDE1717C153480088B7FF /* InfoPlist.strings in Resources */,
 				626FDE1F17C153480088B7FF /* Default.png in Resources */,
+				622B94E217C836D700B71523 /* chronic.png in Resources */,
+				622B94E317C836D700B71523 /* MurakKanye.png in Resources */,
 				626FDE2117C153480088B7FF /* Default@2x.png in Resources */,
 				626FDE2317C153480088B7FF /* Default-568h@2x.png in Resources */,
 				62C2C6EB17C17CB800478B15 /* MainStoryboard.storyboard in Resources */,
+				622B94DF17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png in Resources */,
 				6232348617C1A999002BE554 /* 743c90c1.jpg in Resources */,
-				6232348717C1A999002BE554 /* marcusEatonAlbum.png in Resources */,
-				6232348817C1A999002BE554 /* muse_the_resistance.png in Resources */,
-				6232349617C1BB17002BE554 /* kanye_album.png in Resources */,
 				6232349817C1BBA7002BE554 /* born_sinner.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,11 +491,12 @@
 		626FDE2717C153480088B7FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Brabbletv.com LLC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brabbletv.com LLC";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Justin Martin (6DMVFK5DDN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Justin Martin (6DMVFK5DDN)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfinityPlayer/InfinityPlayer-Prefix.pch";
 				INFOPLIST_FILE = "InfinityPlayer/InfinityPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -501,10 +507,14 @@
 		626FDE2817C153480088B7FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfinityPlayer/InfinityPlayer-Prefix.pch";
 				INFOPLIST_FILE = "InfinityPlayer/InfinityPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
