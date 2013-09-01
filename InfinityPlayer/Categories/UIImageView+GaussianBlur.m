@@ -25,7 +25,7 @@
 
 -(void) applyGaussianBlurWithFactor:(float)blurFactor andExpandImageByFactor:(float)factor {
     [self applyGaussianBlur:blurFactor];
-    CGSize expanded = CGSizeMake(AlbumCoverSize * factor, AlbumCoverSize * factor);
+    CGSize expanded = CGSizeMake(AlbumCoverSize * factor, AlbumCoverSize * 1.1 * factor);
     UIGraphicsBeginImageContext(expanded);
     [self.image drawInRect:CGRectMake(0, 0, expanded.width, expanded.height)];
     UIImage *expandedImage = UIGraphicsGetImageFromCurrentImageContext();

@@ -17,8 +17,18 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "626FDE2D17C153B60088B7FF"
-               BuildableName = "InfinityPlayerTest.octest"
+               BuildableName = "InfinityPlayerTest.xctest"
                BlueprintName = "InfinityPlayerTest"
+               ReferencedContainer = "container:InfinityPlayer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6235CCD617D2B9470094229D"
+               BuildableName = "InfinityPlayerSpecs.xctest"
+               BlueprintName = "InfinityPlayerSpecs"
                ReferencedContainer = "container:InfinityPlayer.xcodeproj">
             </BuildableReference>
          </TestableReference>

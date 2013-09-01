@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IPProgressBarView.h"
 
 @interface IPSongCVCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *blurredBackgroundImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *albumCoverImageView;
-@property (weak, nonatomic) IBOutlet UILabel *songTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *artistLabel;
+@property (strong, nonatomic) UIImageView *blurredBackgroundImageView;
+@property (strong, nonatomic) UIImageView *albumCoverImageView;
+@property (strong, nonatomic) UILabel *songTitleLabel;
+@property (strong, nonatomic) UILabel *artistLabel;
+@property (nonatomic, strong) IPProgressBarView *progressBar;
 
 @end

@@ -9,60 +9,30 @@
             <objects>
                 <viewController storyboardIdentifier="ScanViewController" id="5Ha-tK-pT8" customClass="IPScanViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="778-Fo-maW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="TXV-U2-X6b">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="IQB-nk-UrT">
-                                    <size key="itemSize" width="320" height="548"/>
+                                    <size key="itemSize" width="320" height="460"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SongCVCell" id="bKU-FW-CBR" customClass="IPSongCVCell">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="548"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Lay-7v-NTZ" userLabel="blurredBackground">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                                                </imageView>
-                                                <view alpha="0.29999999999999999" contentMode="scaleToFill" id="Rsc-dn-r0e" userLabel="blackOverlay">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="nKM-2b-zbJ" userLabel="albumCover">
-                                                    <rect key="frame" x="0.0" y="134" width="320" height="320"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The Resistance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rXU-GA-BCg" userLabel="songLabel - The Resistance">
-                                                    <rect key="frame" x="0.0" y="32.5" width="320" height="24"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Muse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jLj-VL-gD7" userLabel="artistLabel - Muse">
-                                                    <rect key="frame" x="0.0" y="57.5" width="320" height="24"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="customSize" width="320" height="548"/>
-                                        <connections>
-                                            <outlet property="albumCoverImageView" destination="nKM-2b-zbJ" id="5rD-Po-AAI"/>
-                                            <outlet property="artistLabel" destination="jLj-VL-gD7" id="MWW-Tg-rTW"/>
-                                            <outlet property="blurredBackgroundImageView" destination="Lay-7v-NTZ" id="Wp5-A1-rtn"/>
-                                            <outlet property="songTitleLabel" destination="rXU-GA-BCg" id="ieA-Yj-3JR"/>
-                                        </connections>
+                                        <size key="customSize" width="320" height="460"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -71,6 +41,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="currentSongCollectionView" destination="TXV-U2-X6b" id="pCh-v4-Ilj"/>
                     </connections>

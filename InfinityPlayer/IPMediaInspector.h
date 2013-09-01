@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface IPMediaInspector : NSObject
 
 +(NSArray *) getAllMedia;
++(NSArray *) getAllMediaGroupedByAlbum;
+
++(NSString *) getTitleForMediaItem:(MPMediaItem *)item;
 
 @end

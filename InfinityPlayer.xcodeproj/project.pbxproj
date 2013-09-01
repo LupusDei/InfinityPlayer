@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		497B4B38DBB34A1D9EEE7157 /* libPods-InfinityPlayerTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97CC2A2CA6407A93B70EEE /* libPods-InfinityPlayerTest.a */; };
 		622B94DF17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94DE17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png */; };
 		622B94E217C836D700B71523 /* chronic.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94E017C836D700B71523 /* chronic.png */; };
 		622B94E317C836D700B71523 /* MurakKanye.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94E117C836D700B71523 /* MurakKanye.png */; };
+		622B94E717C84FB100B71523 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94E517C84FB100B71523 /* Default-568h@2x.png */; };
+		622B94E817C84FB100B71523 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94E617C84FB100B71523 /* icon.png */; };
 		6232348017C1A783002BE554 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6232347F17C1A783002BE554 /* MediaPlayer.framework */; };
 		6232348617C1A999002BE554 /* 743c90c1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6232348317C1A999002BE554 /* 743c90c1.jpg */; };
 		6232348C17C1AA8E002BE554 /* IPSongCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6232348B17C1AA8E002BE554 /* IPSongCVCell.m */; };
@@ -18,6 +19,15 @@
 		6232349217C1B27E002BE554 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6232349117C1B27E002BE554 /* CoreImage.framework */; };
 		6232349417C1B287002BE554 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6232349317C1B287002BE554 /* ImageIO.framework */; };
 		6232349817C1BBA7002BE554 /* born_sinner.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6232349717C1BBA7002BE554 /* born_sinner.jpeg */; };
+		6235CCC017D25B950094229D /* IPBlackOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCBF17D25B950094229D /* IPBlackOverlayView.m */; };
+		6235CCC317D2659D0094229D /* IPFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCC217D2659D0094229D /* IPFontHelper.m */; };
+		6235CCCD17D2B40E0094229D /* IPPlayable.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCCC17D2B40E0094229D /* IPPlayable.m */; };
+		6235CCD817D2B9470094229D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6235CCCE17D2B6580094229D /* XCTest.framework */; };
+		6235CCD917D2B9470094229D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0E17C153480088B7FF /* Foundation.framework */; };
+		6235CCDA17D2B9470094229D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0C17C153480088B7FF /* UIKit.framework */; };
+		6235CCE017D2B9470094229D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6235CCDE17D2B9470094229D /* InfoPlist.strings */; };
+		6235CCE917D2B9A30094229D /* IPMockMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCC817D2B0F20094229D /* IPMockMediaItem.m */; };
+		6235CCEC17D2B9B10094229D /* IPPlayableSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCC517D2AFF80094229D /* IPPlayableSpec.m */; };
 		626FDE0D17C153480088B7FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0C17C153480088B7FF /* UIKit.framework */; };
 		626FDE0F17C153480088B7FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0E17C153480088B7FF /* Foundation.framework */; };
 		626FDE1117C153480088B7FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE1017C153480088B7FF /* CoreGraphics.framework */; };
@@ -26,22 +36,30 @@
 		626FDE1D17C153480088B7FF /* IPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 626FDE1C17C153480088B7FF /* IPAppDelegate.m */; };
 		626FDE1F17C153480088B7FF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 626FDE1E17C153480088B7FF /* Default.png */; };
 		626FDE2117C153480088B7FF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 626FDE2017C153480088B7FF /* Default@2x.png */; };
-		626FDE2317C153480088B7FF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 626FDE2217C153480088B7FF /* Default-568h@2x.png */; };
-		626FDE3017C153B60088B7FF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE2F17C153B60088B7FF /* SenTestingKit.framework */; };
-		626FDE3117C153B60088B7FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0C17C153480088B7FF /* UIKit.framework */; };
-		626FDE3217C153B60088B7FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0E17C153480088B7FF /* Foundation.framework */; };
-		626FDE3817C153B60088B7FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 626FDE3617C153B60088B7FF /* InfoPlist.strings */; };
-		626FDE3B17C153B60088B7FF /* InfinityPlayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 626FDE3A17C153B60088B7FF /* InfinityPlayerTest.m */; };
-		62C2C6E317C159A100478B15 /* IPAlbumSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C2C6E217C159A100478B15 /* IPAlbumSpec.m */; };
+		62A38BF717D1714400B401F3 /* IPProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A38BF617D1714400B401F3 /* IPProgressBarView.m */; };
+		62A38BFA17D17AC700B401F3 /* UIView+SizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A38BF917D17AC700B401F3 /* UIView+SizeHelper.m */; };
+		62C0857817CADC6700CFA8AB /* IPMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C0857717CADC6700CFA8AB /* IPMediaPlayer.m */; };
 		62C2C6E617C17B8D00478B15 /* IPMediaInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C2C6E517C17B8D00478B15 /* IPMediaInspector.m */; };
 		62C2C6EB17C17CB800478B15 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C2C6EA17C17CB800478B15 /* MainStoryboard.storyboard */; };
 		62C2C6EE17C1805E00478B15 /* IPScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C2C6ED17C1805E00478B15 /* IPScanViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6235CCE417D2B9470094229D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 626FDE0117C153480088B7FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 626FDE0817C153480088B7FF;
+			remoteInfo = InfinityPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		622B94DE17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drake-nothing-was-the-same-artwork-2.png"; sourceTree = "<group>"; };
 		622B94E017C836D700B71523 /* chronic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chronic.png; sourceTree = "<group>"; };
 		622B94E117C836D700B71523 /* MurakKanye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MurakKanye.png; sourceTree = "<group>"; };
+		622B94E517C84FB100B71523 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		622B94E617C84FB100B71523 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		6232347F17C1A783002BE554 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		6232348317C1A999002BE554 /* 743c90c1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 743c90c1.jpg; sourceTree = "<group>"; };
 		6232348A17C1AA8E002BE554 /* IPSongCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPSongCVCell.h; path = cells/IPSongCVCell.h; sourceTree = "<group>"; };
@@ -51,6 +69,21 @@
 		6232349117C1B27E002BE554 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6232349317C1B287002BE554 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		6232349717C1BBA7002BE554 /* born_sinner.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = born_sinner.jpeg; sourceTree = "<group>"; };
+		6235CCB817D254D50094229D /* IPUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPUIConstants.h; sourceTree = "<group>"; };
+		6235CCBE17D25B950094229D /* IPBlackOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPBlackOverlayView.h; path = UIElements/IPBlackOverlayView.h; sourceTree = "<group>"; };
+		6235CCBF17D25B950094229D /* IPBlackOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPBlackOverlayView.m; path = UIElements/IPBlackOverlayView.m; sourceTree = "<group>"; };
+		6235CCC117D2659D0094229D /* IPFontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPFontHelper.h; path = UIHelpers/IPFontHelper.h; sourceTree = "<group>"; };
+		6235CCC217D2659D0094229D /* IPFontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPFontHelper.m; path = UIHelpers/IPFontHelper.m; sourceTree = "<group>"; };
+		6235CCC517D2AFF80094229D /* IPPlayableSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPPlayableSpec.m; path = ../InfinityPlayerTest/IPPlayableSpec.m; sourceTree = "<group>"; };
+		6235CCC717D2B0F20094229D /* IPMockMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPMockMediaItem.h; sourceTree = "<group>"; };
+		6235CCC817D2B0F20094229D /* IPMockMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPMockMediaItem.m; sourceTree = "<group>"; };
+		6235CCCB17D2B40E0094229D /* IPPlayable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPPlayable.h; sourceTree = "<group>"; };
+		6235CCCC17D2B40E0094229D /* IPPlayable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPPlayable.m; sourceTree = "<group>"; };
+		6235CCCE17D2B6580094229D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6235CCD717D2B9470094229D /* InfinityPlayerSpecs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfinityPlayerSpecs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6235CCDD17D2B9470094229D /* InfinityPlayerSpecs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InfinityPlayerSpecs-Info.plist"; sourceTree = "<group>"; };
+		6235CCDF17D2B9470094229D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6235CCE317D2B9470094229D /* InfinityPlayerSpecs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfinityPlayerSpecs-Prefix.pch"; sourceTree = "<group>"; };
 		626FDE0917C153480088B7FF /* InfinityPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfinityPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		626FDE0C17C153480088B7FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		626FDE0E17C153480088B7FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,15 +96,16 @@
 		626FDE1C17C153480088B7FF /* IPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPAppDelegate.m; sourceTree = "<group>"; };
 		626FDE1E17C153480088B7FF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		626FDE2017C153480088B7FF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		626FDE2217C153480088B7FF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		626FDE2E17C153B60088B7FF /* InfinityPlayerTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfinityPlayerTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		626FDE2F17C153B60088B7FF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		626FDE3517C153B60088B7FF /* InfinityPlayerTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InfinityPlayerTest-Info.plist"; sourceTree = "<group>"; };
 		626FDE3717C153B60088B7FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		626FDE3917C153B60088B7FF /* InfinityPlayerTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfinityPlayerTest.h; sourceTree = "<group>"; };
-		626FDE3A17C153B60088B7FF /* InfinityPlayerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfinityPlayerTest.m; sourceTree = "<group>"; };
 		626FDE3C17C153B60088B7FF /* InfinityPlayerTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfinityPlayerTest-Prefix.pch"; sourceTree = "<group>"; };
-		62C2C6E217C159A100478B15 /* IPAlbumSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAlbumSpec.m; sourceTree = "<group>"; };
+		62A38BF517D1714400B401F3 /* IPProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProgressBarView.h; sourceTree = "<group>"; };
+		62A38BF617D1714400B401F3 /* IPProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProgressBarView.m; sourceTree = "<group>"; };
+		62A38BF817D17AC700B401F3 /* UIView+SizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SizeHelper.h"; sourceTree = "<group>"; };
+		62A38BF917D17AC700B401F3 /* UIView+SizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SizeHelper.m"; sourceTree = "<group>"; };
+		62C0857617CADC6700CFA8AB /* IPMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPMediaPlayer.h; sourceTree = "<group>"; };
+		62C0857717CADC6700CFA8AB /* IPMediaPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPMediaPlayer.m; sourceTree = "<group>"; };
 		62C2C6E417C17B8D00478B15 /* IPMediaInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPMediaInspector.h; sourceTree = "<group>"; };
 		62C2C6E517C17B8D00478B15 /* IPMediaInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPMediaInspector.m; sourceTree = "<group>"; };
 		62C2C6EA17C17CB800478B15 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -82,6 +116,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6235CCD417D2B9470094229D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6235CCD817D2B9470094229D /* XCTest.framework in Frameworks */,
+				6235CCDA17D2B9470094229D /* UIKit.framework in Frameworks */,
+				6235CCD917D2B9470094229D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		626FDE0617C153480088B7FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,27 +139,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		626FDE2A17C153B60088B7FF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				626FDE3017C153B60088B7FF /* SenTestingKit.framework in Frameworks */,
-				626FDE3117C153B60088B7FF /* UIKit.framework in Frameworks */,
-				626FDE3217C153B60088B7FF /* Foundation.framework in Frameworks */,
-				497B4B38DBB34A1D9EEE7157 /* libPods-InfinityPlayerTest.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		622B94E417C84FA100B71523 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				622B94E517C84FB100B71523 /* Default-568h@2x.png */,
+				622B94E617C84FB100B71523 /* icon.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
 		6232348117C1A815002BE554 /* MediaDisplay */ = {
 			isa = PBXGroup;
 			children = (
-				62C2C6EC17C1805E00478B15 /* IPScanViewController.h */,
-				62C2C6ED17C1805E00478B15 /* IPScanViewController.m */,
-				6232348A17C1AA8E002BE554 /* IPSongCVCell.h */,
-				6232348B17C1AA8E002BE554 /* IPSongCVCell.m */,
+				6235CCC417D26EF90094229D /* CurrentTrack */,
 			);
 			name = MediaDisplay;
 			sourceTree = "<group>";
@@ -135,6 +174,7 @@
 		6232348917C1A9A8002BE554 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				622B94E417C84FA100B71523 /* icons */,
 				6232348217C1A999002BE554 /* AlbumArt */,
 			);
 			name = images;
@@ -149,11 +189,90 @@
 			name = Blurs;
 			sourceTree = "<group>";
 		};
+		6235CCBB17D258E90094229D /* MediaDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				62C2C6E417C17B8D00478B15 /* IPMediaInspector.h */,
+				62C2C6E517C17B8D00478B15 /* IPMediaInspector.m */,
+				62C0857617CADC6700CFA8AB /* IPMediaPlayer.h */,
+				62C0857717CADC6700CFA8AB /* IPMediaPlayer.m */,
+				6235CCCB17D2B40E0094229D /* IPPlayable.h */,
+				6235CCCC17D2B40E0094229D /* IPPlayable.m */,
+			);
+			name = MediaDelivery;
+			sourceTree = "<group>";
+		};
+		6235CCBC17D2590E0094229D /* UIHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				6235CCB817D254D50094229D /* IPUIConstants.h */,
+				62A38BF817D17AC700B401F3 /* UIView+SizeHelper.h */,
+				62A38BF917D17AC700B401F3 /* UIView+SizeHelper.m */,
+				6235CCC117D2659D0094229D /* IPFontHelper.h */,
+				6235CCC217D2659D0094229D /* IPFontHelper.m */,
+			);
+			name = UIHelpers;
+			sourceTree = "<group>";
+		};
+		6235CCBD17D25B6E0094229D /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				62C2C6EA17C17CB800478B15 /* MainStoryboard.storyboard */,
+				62A38BF517D1714400B401F3 /* IPProgressBarView.h */,
+				62A38BF617D1714400B401F3 /* IPProgressBarView.m */,
+				6235CCBE17D25B950094229D /* IPBlackOverlayView.h */,
+				6235CCBF17D25B950094229D /* IPBlackOverlayView.m */,
+			);
+			name = UIElements;
+			sourceTree = "<group>";
+		};
+		6235CCC417D26EF90094229D /* CurrentTrack */ = {
+			isa = PBXGroup;
+			children = (
+				62C2C6EC17C1805E00478B15 /* IPScanViewController.h */,
+				62C2C6ED17C1805E00478B15 /* IPScanViewController.m */,
+				6232348A17C1AA8E002BE554 /* IPSongCVCell.h */,
+				6232348B17C1AA8E002BE554 /* IPSongCVCell.m */,
+			);
+			name = CurrentTrack;
+			sourceTree = "<group>";
+		};
+		6235CCCA17D2B0F60094229D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				6235CCC717D2B0F20094229D /* IPMockMediaItem.h */,
+				6235CCC817D2B0F20094229D /* IPMockMediaItem.m */,
+			);
+			name = Mocks;
+			path = ../InfinityPlayerTest;
+			sourceTree = "<group>";
+		};
+		6235CCDB17D2B9470094229D /* InfinityPlayerSpecs */ = {
+			isa = PBXGroup;
+			children = (
+				6235CCC517D2AFF80094229D /* IPPlayableSpec.m */,
+				6235CCCA17D2B0F60094229D /* Mocks */,
+				6235CCDC17D2B9470094229D /* Supporting Files */,
+			);
+			path = InfinityPlayerSpecs;
+			sourceTree = "<group>";
+		};
+		6235CCDC17D2B9470094229D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6235CCDD17D2B9470094229D /* InfinityPlayerSpecs-Info.plist */,
+				6235CCDE17D2B9470094229D /* InfoPlist.strings */,
+				6235CCE317D2B9470094229D /* InfinityPlayerSpecs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		626FDE0017C153480088B7FF = {
 			isa = PBXGroup;
 			children = (
 				626FDE1217C153480088B7FF /* InfinityPlayer */,
 				626FDE3317C153B60088B7FF /* InfinityPlayerTest */,
+				6235CCDB17D2B9470094229D /* InfinityPlayerSpecs */,
 				626FDE0B17C153480088B7FF /* Frameworks */,
 				626FDE0A17C153480088B7FF /* Products */,
 				936945CF3F044F00A0E0FDB1 /* Pods-InfinityPlayerTest.xcconfig */,
@@ -164,7 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				626FDE0917C153480088B7FF /* InfinityPlayer.app */,
-				626FDE2E17C153B60088B7FF /* InfinityPlayerTest.octest */,
+				6235CCD717D2B9470094229D /* InfinityPlayerSpecs.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +291,7 @@
 		626FDE0B17C153480088B7FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6235CCCE17D2B6580094229D /* XCTest.framework */,
 				6232349317C1B287002BE554 /* ImageIO.framework */,
 				6232349117C1B27E002BE554 /* CoreImage.framework */,
 				6232347F17C1A783002BE554 /* MediaPlayer.framework */,
@@ -187,15 +307,15 @@
 		626FDE1217C153480088B7FF /* InfinityPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				62C2C6EA17C17CB800478B15 /* MainStoryboard.storyboard */,
-				6232348D17C1AE7B002BE554 /* Blurs */,
-				6232348917C1A9A8002BE554 /* images */,
-				6232348117C1A815002BE554 /* MediaDisplay */,
-				626FDE1317C153480088B7FF /* Supporting Files */,
 				626FDE1B17C153480088B7FF /* IPAppDelegate.h */,
 				626FDE1C17C153480088B7FF /* IPAppDelegate.m */,
-				62C2C6E417C17B8D00478B15 /* IPMediaInspector.h */,
-				62C2C6E517C17B8D00478B15 /* IPMediaInspector.m */,
+				6235CCBD17D25B6E0094229D /* UIElements */,
+				6235CCBC17D2590E0094229D /* UIHelpers */,
+				6235CCBB17D258E90094229D /* MediaDelivery */,
+				6232348117C1A815002BE554 /* MediaDisplay */,
+				6232348D17C1AE7B002BE554 /* Blurs */,
+				626FDE1317C153480088B7FF /* Supporting Files */,
+				6232348917C1A9A8002BE554 /* images */,
 			);
 			path = InfinityPlayer;
 			sourceTree = "<group>";
@@ -209,7 +329,6 @@
 				626FDE1A17C153480088B7FF /* InfinityPlayer-Prefix.pch */,
 				626FDE1E17C153480088B7FF /* Default.png */,
 				626FDE2017C153480088B7FF /* Default@2x.png */,
-				626FDE2217C153480088B7FF /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -217,10 +336,7 @@
 		626FDE3317C153B60088B7FF /* InfinityPlayerTest */ = {
 			isa = PBXGroup;
 			children = (
-				626FDE3917C153B60088B7FF /* InfinityPlayerTest.h */,
-				626FDE3A17C153B60088B7FF /* InfinityPlayerTest.m */,
 				626FDE3417C153B60088B7FF /* Supporting Files */,
-				62C2C6E217C159A100478B15 /* IPAlbumSpec.m */,
 			);
 			path = InfinityPlayerTest;
 			sourceTree = "<group>";
@@ -238,6 +354,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6235CCD617D2B9470094229D /* InfinityPlayerSpecs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6235CCE617D2B9470094229D /* Build configuration list for PBXNativeTarget "InfinityPlayerSpecs" */;
+			buildPhases = (
+				6235CCD317D2B9470094229D /* Sources */,
+				6235CCD417D2B9470094229D /* Frameworks */,
+				6235CCD517D2B9470094229D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6235CCE517D2B9470094229D /* PBXTargetDependency */,
+			);
+			name = InfinityPlayerSpecs;
+			productName = InfinityPlayerSpecs;
+			productReference = 6235CCD717D2B9470094229D /* InfinityPlayerSpecs.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		626FDE0817C153480088B7FF /* InfinityPlayer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 626FDE2617C153480088B7FF /* Build configuration list for PBXNativeTarget "InfinityPlayer" */;
@@ -255,26 +389,6 @@
 			productReference = 626FDE0917C153480088B7FF /* InfinityPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		626FDE2D17C153B60088B7FF /* InfinityPlayerTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 626FDE3D17C153B60088B7FF /* Build configuration list for PBXNativeTarget "InfinityPlayerTest" */;
-			buildPhases = (
-				A2B7664BFD3D45468071CF5F /* Check Pods Manifest.lock */,
-				626FDE2917C153B60088B7FF /* Sources */,
-				626FDE2A17C153B60088B7FF /* Frameworks */,
-				626FDE2B17C153B60088B7FF /* Resources */,
-				626FDE2C17C153B60088B7FF /* ShellScript */,
-				863E6C5993AF4CE991AE1038 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = InfinityPlayerTest;
-			productName = InfinityPlayerTest;
-			productReference = 626FDE2E17C153B60088B7FF /* InfinityPlayerTest.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -285,6 +399,9 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = JMM;
 				TargetAttributes = {
+					6235CCD617D2B9470094229D = {
+						TestTargetID = 626FDE0817C153480088B7FF;
+					};
 					626FDE0817C153480088B7FF = {
 						DevelopmentTeam = 2BRYAM5Q52;
 					};
@@ -303,12 +420,20 @@
 			projectRoot = "";
 			targets = (
 				626FDE0817C153480088B7FF /* InfinityPlayer */,
-				626FDE2D17C153B60088B7FF /* InfinityPlayerTest */,
+				6235CCD617D2B9470094229D /* InfinityPlayerSpecs */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6235CCD517D2B9470094229D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6235CCE017D2B9470094229D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		626FDE0717C153480088B7FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,96 +443,65 @@
 				622B94E217C836D700B71523 /* chronic.png in Resources */,
 				622B94E317C836D700B71523 /* MurakKanye.png in Resources */,
 				626FDE2117C153480088B7FF /* Default@2x.png in Resources */,
-				626FDE2317C153480088B7FF /* Default-568h@2x.png in Resources */,
+				622B94E717C84FB100B71523 /* Default-568h@2x.png in Resources */,
 				62C2C6EB17C17CB800478B15 /* MainStoryboard.storyboard in Resources */,
+				622B94E817C84FB100B71523 /* icon.png in Resources */,
 				622B94DF17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png in Resources */,
 				6232348617C1A999002BE554 /* 743c90c1.jpg in Resources */,
 				6232349817C1BBA7002BE554 /* born_sinner.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		626FDE2B17C153B60088B7FF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				626FDE3817C153B60088B7FF /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		626FDE2C17C153B60088B7FF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		863E6C5993AF4CE991AE1038 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-InfinityPlayerTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A2B7664BFD3D45468071CF5F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
+		6235CCD317D2B9470094229D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6235CCEC17D2B9B10094229D /* IPPlayableSpec.m in Sources */,
+				6235CCE917D2B9A30094229D /* IPMockMediaItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		626FDE0517C153480088B7FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				626FDE1917C153480088B7FF /* main.m in Sources */,
 				626FDE1D17C153480088B7FF /* IPAppDelegate.m in Sources */,
+				62C0857817CADC6700CFA8AB /* IPMediaPlayer.m in Sources */,
+				62A38BFA17D17AC700B401F3 /* UIView+SizeHelper.m in Sources */,
 				62C2C6E617C17B8D00478B15 /* IPMediaInspector.m in Sources */,
+				6235CCC317D2659D0094229D /* IPFontHelper.m in Sources */,
+				62A38BF717D1714400B401F3 /* IPProgressBarView.m in Sources */,
 				62C2C6EE17C1805E00478B15 /* IPScanViewController.m in Sources */,
 				6232348C17C1AA8E002BE554 /* IPSongCVCell.m in Sources */,
+				6235CCC017D25B950094229D /* IPBlackOverlayView.m in Sources */,
+				6235CCCD17D2B40E0094229D /* IPPlayable.m in Sources */,
 				6232349017C1B022002BE554 /* UIImageView+GaussianBlur.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		626FDE2917C153B60088B7FF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				626FDE3B17C153B60088B7FF /* InfinityPlayerTest.m in Sources */,
-				62C2C6E317C159A100478B15 /* IPAlbumSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6235CCE517D2B9470094229D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 626FDE0817C153480088B7FF /* InfinityPlayer */;
+			targetProxy = 6235CCE417D2B9470094229D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		6235CCDE17D2B9470094229D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6235CCDF17D2B9470094229D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		626FDE1517C153480088B7FF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -427,6 +521,63 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6235CCE717D2B9470094229D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InfinityPlayer.app/InfinityPlayer";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InfinityPlayerSpecs/InfinityPlayerSpecs-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "InfinityPlayerSpecs/InfinityPlayerSpecs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6235CCE817D2B9470094229D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InfinityPlayer.app/InfinityPlayer";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InfinityPlayerSpecs/InfinityPlayerSpecs-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "InfinityPlayerSpecs/InfinityPlayerSpecs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		626FDE2417C153480088B7FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -493,6 +644,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Justin Martin (6DMVFK5DDN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Justin Martin (6DMVFK5DDN)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfinityPlayer/InfinityPlayer-Prefix.pch";
 				INFOPLIST_FILE = "InfinityPlayer/InfinityPlayer-Info.plist";
@@ -509,6 +664,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfinityPlayer/InfinityPlayer-Prefix.pch";
 				INFOPLIST_FILE = "InfinityPlayer/InfinityPlayer-Info.plist";
@@ -519,45 +678,17 @@
 			};
 			name = Release;
 		};
-		626FDE3E17C153B60088B7FF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 936945CF3F044F00A0E0FDB1 /* Pods-InfinityPlayerTest.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InfinityPlayer.app/InfinityPlayer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InfinityPlayerTest/InfinityPlayerTest-Prefix.pch";
-				INFOPLIST_FILE = "InfinityPlayerTest/InfinityPlayerTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		626FDE3F17C153B60088B7FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 936945CF3F044F00A0E0FDB1 /* Pods-InfinityPlayerTest.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InfinityPlayer.app/InfinityPlayer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InfinityPlayerTest/InfinityPlayerTest-Prefix.pch";
-				INFOPLIST_FILE = "InfinityPlayerTest/InfinityPlayerTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6235CCE617D2B9470094229D /* Build configuration list for PBXNativeTarget "InfinityPlayerSpecs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6235CCE717D2B9470094229D /* Debug */,
+				6235CCE817D2B9470094229D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		626FDE0417C153480088B7FF /* Build configuration list for PBXProject "InfinityPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -572,15 +703,6 @@
 			buildConfigurations = (
 				626FDE2717C153480088B7FF /* Debug */,
 				626FDE2817C153480088B7FF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		626FDE3D17C153B60088B7FF /* Build configuration list for PBXNativeTarget "InfinityPlayerTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				626FDE3E17C153B60088B7FF /* Debug */,
-				626FDE3F17C153B60088B7FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,7 +7,6 @@
 //
 
 #import "IPMediaInspector.h"
-#import <MediaPlayer/MediaPlayer.h>
 
 @implementation IPMediaInspector
 
@@ -16,4 +15,12 @@
     return [query collections];
 }
 
++(NSArray *) getAllMediaGroupedByAlbum {
+    MPMediaQuery *query = [MPMediaQuery albumsQuery];
+    return [query collections];
+}
+
++(NSString *) getTitleForMediaItem:(MPMediaItem *)item {
+    return [item valueForKey:MPMediaItemPropertyAlbumTitle];
+}
 @end
