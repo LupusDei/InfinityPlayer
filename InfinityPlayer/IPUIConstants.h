@@ -12,12 +12,14 @@
 #define ipLightGaussianBlur 24
 #define ipMediumGaussianBlur 42
 #define ipHeavyGaussianBlur 64
+#define ipScaleFactor 2.2
 
 
 #define ipStandardWidth 320
-
+#define ipBackButtonWidth 36
 #define ipTitleHeight 22
-
+#define ipNavbarHeight 36
+#define ipStatusBarHeight 20
 
 //Spacers
 #define ipTinySpacer 8

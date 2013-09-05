@@ -28,6 +28,8 @@
 		6235CCE017D2B9470094229D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6235CCDE17D2B9470094229D /* InfoPlist.strings */; };
 		6235CCE917D2B9A30094229D /* IPMockMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCC817D2B0F20094229D /* IPMockMediaItem.m */; };
 		6235CCEC17D2B9B10094229D /* IPPlayableSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCC517D2AFF80094229D /* IPPlayableSpec.m */; };
+		6235CCEF17D2CDC10094229D /* IPAlbumArtCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCEE17D2CDC10094229D /* IPAlbumArtCache.m */; };
+		6235CCF517D2D3B80094229D /* IPGaussianBlurEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCF417D2D3B80094229D /* IPGaussianBlurEngine.m */; };
 		626FDE0D17C153480088B7FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0C17C153480088B7FF /* UIKit.framework */; };
 		626FDE0F17C153480088B7FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0E17C153480088B7FF /* Foundation.framework */; };
 		626FDE1117C153480088B7FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE1017C153480088B7FF /* CoreGraphics.framework */; };
@@ -36,6 +38,9 @@
 		626FDE1D17C153480088B7FF /* IPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 626FDE1C17C153480088B7FF /* IPAppDelegate.m */; };
 		626FDE1F17C153480088B7FF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 626FDE1E17C153480088B7FF /* Default.png */; };
 		626FDE2117C153480088B7FF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 626FDE2017C153480088B7FF /* Default@2x.png */; };
+		627305CD17D7FD6300D1DDF2 /* IPSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305CC17D7FD6300D1DDF2 /* IPSearchVC.m */; };
+		627305D017D944D900D1DDF2 /* IPSimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305CF17D944D900D1DDF2 /* IPSimpleCell.m */; };
+		627305D217D946DF00D1DDF2 /* searchInputBorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 627305D117D946DF00D1DDF2 /* searchInputBorder@2x.png */; };
 		62A38BF717D1714400B401F3 /* IPProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A38BF617D1714400B401F3 /* IPProgressBarView.m */; };
 		62A38BFA17D17AC700B401F3 /* UIView+SizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A38BF917D17AC700B401F3 /* UIView+SizeHelper.m */; };
 		62C0857817CADC6700CFA8AB /* IPMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C0857717CADC6700CFA8AB /* IPMediaPlayer.m */; };
@@ -84,6 +89,10 @@
 		6235CCDD17D2B9470094229D /* InfinityPlayerSpecs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InfinityPlayerSpecs-Info.plist"; sourceTree = "<group>"; };
 		6235CCDF17D2B9470094229D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6235CCE317D2B9470094229D /* InfinityPlayerSpecs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfinityPlayerSpecs-Prefix.pch"; sourceTree = "<group>"; };
+		6235CCED17D2CDC10094229D /* IPAlbumArtCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAlbumArtCache.h; sourceTree = "<group>"; };
+		6235CCEE17D2CDC10094229D /* IPAlbumArtCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAlbumArtCache.m; sourceTree = "<group>"; };
+		6235CCF317D2D3B80094229D /* IPGaussianBlurEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPGaussianBlurEngine.h; sourceTree = "<group>"; };
+		6235CCF417D2D3B80094229D /* IPGaussianBlurEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPGaussianBlurEngine.m; sourceTree = "<group>"; };
 		626FDE0917C153480088B7FF /* InfinityPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfinityPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		626FDE0C17C153480088B7FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		626FDE0E17C153480088B7FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,9 +106,11 @@
 		626FDE1E17C153480088B7FF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		626FDE2017C153480088B7FF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		626FDE2F17C153B60088B7FF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		626FDE3517C153B60088B7FF /* InfinityPlayerTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InfinityPlayerTest-Info.plist"; sourceTree = "<group>"; };
-		626FDE3717C153B60088B7FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		626FDE3C17C153B60088B7FF /* InfinityPlayerTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfinityPlayerTest-Prefix.pch"; sourceTree = "<group>"; };
+		627305CB17D7FD6300D1DDF2 /* IPSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPSearchVC.h; path = MediaDisplay/Search/IPSearchVC.h; sourceTree = "<group>"; };
+		627305CC17D7FD6300D1DDF2 /* IPSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPSearchVC.m; path = MediaDisplay/Search/IPSearchVC.m; sourceTree = "<group>"; };
+		627305CE17D944D900D1DDF2 /* IPSimpleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPSimpleCell.h; path = cells/IPSimpleCell.h; sourceTree = "<group>"; };
+		627305CF17D944D900D1DDF2 /* IPSimpleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPSimpleCell.m; path = cells/IPSimpleCell.m; sourceTree = "<group>"; };
+		627305D117D946DF00D1DDF2 /* searchInputBorder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchInputBorder@2x.png"; sourceTree = "<group>"; };
 		62A38BF517D1714400B401F3 /* IPProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProgressBarView.h; sourceTree = "<group>"; };
 		62A38BF617D1714400B401F3 /* IPProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProgressBarView.m; sourceTree = "<group>"; };
 		62A38BF817D17AC700B401F3 /* UIView+SizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SizeHelper.h"; sourceTree = "<group>"; };
@@ -154,7 +165,10 @@
 		6232348117C1A815002BE554 /* MediaDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				627305CA17D7FD2A00D1DDF2 /* Search */,
 				6235CCC417D26EF90094229D /* CurrentTrack */,
+				6235CCED17D2CDC10094229D /* IPAlbumArtCache.h */,
+				6235CCEE17D2CDC10094229D /* IPAlbumArtCache.m */,
 			);
 			name = MediaDisplay;
 			sourceTree = "<group>";
@@ -174,6 +188,7 @@
 		6232348917C1A9A8002BE554 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				627305D117D946DF00D1DDF2 /* searchInputBorder@2x.png */,
 				622B94E417C84FA100B71523 /* icons */,
 				6232348217C1A999002BE554 /* AlbumArt */,
 			);
@@ -185,6 +200,8 @@
 			children = (
 				6232348E17C1B022002BE554 /* UIImageView+GaussianBlur.h */,
 				6232348F17C1B022002BE554 /* UIImageView+GaussianBlur.m */,
+				6235CCF317D2D3B80094229D /* IPGaussianBlurEngine.h */,
+				6235CCF417D2D3B80094229D /* IPGaussianBlurEngine.m */,
 			);
 			name = Blurs;
 			sourceTree = "<group>";
@@ -271,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				626FDE1217C153480088B7FF /* InfinityPlayer */,
-				626FDE3317C153B60088B7FF /* InfinityPlayerTest */,
 				6235CCDB17D2B9470094229D /* InfinityPlayerSpecs */,
 				626FDE0B17C153480088B7FF /* Frameworks */,
 				626FDE0A17C153480088B7FF /* Products */,
@@ -333,22 +349,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		626FDE3317C153B60088B7FF /* InfinityPlayerTest */ = {
+		627305CA17D7FD2A00D1DDF2 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				626FDE3417C153B60088B7FF /* Supporting Files */,
+				627305CB17D7FD6300D1DDF2 /* IPSearchVC.h */,
+				627305CC17D7FD6300D1DDF2 /* IPSearchVC.m */,
+				627305CE17D944D900D1DDF2 /* IPSimpleCell.h */,
+				627305CF17D944D900D1DDF2 /* IPSimpleCell.m */,
 			);
-			path = InfinityPlayerTest;
-			sourceTree = "<group>";
-		};
-		626FDE3417C153B60088B7FF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				626FDE3517C153B60088B7FF /* InfinityPlayerTest-Info.plist */,
-				626FDE3617C153B60088B7FF /* InfoPlist.strings */,
-				626FDE3C17C153B60088B7FF /* InfinityPlayerTest-Prefix.pch */,
-			);
-			name = "Supporting Files";
+			name = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +456,7 @@
 				62C2C6EB17C17CB800478B15 /* MainStoryboard.storyboard in Resources */,
 				622B94E817C84FB100B71523 /* icon.png in Resources */,
 				622B94DF17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png in Resources */,
+				627305D217D946DF00D1DDF2 /* searchInputBorder@2x.png in Resources */,
 				6232348617C1A999002BE554 /* 743c90c1.jpg in Resources */,
 				6232349817C1BBA7002BE554 /* born_sinner.jpeg in Resources */,
 			);
@@ -469,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				626FDE1917C153480088B7FF /* main.m in Sources */,
+				627305CD17D7FD6300D1DDF2 /* IPSearchVC.m in Sources */,
 				626FDE1D17C153480088B7FF /* IPAppDelegate.m in Sources */,
 				62C0857817CADC6700CFA8AB /* IPMediaPlayer.m in Sources */,
 				62A38BFA17D17AC700B401F3 /* UIView+SizeHelper.m in Sources */,
@@ -476,9 +487,12 @@
 				6235CCC317D2659D0094229D /* IPFontHelper.m in Sources */,
 				62A38BF717D1714400B401F3 /* IPProgressBarView.m in Sources */,
 				62C2C6EE17C1805E00478B15 /* IPScanViewController.m in Sources */,
+				6235CCF517D2D3B80094229D /* IPGaussianBlurEngine.m in Sources */,
 				6232348C17C1AA8E002BE554 /* IPSongCVCell.m in Sources */,
 				6235CCC017D25B950094229D /* IPBlackOverlayView.m in Sources */,
+				627305D017D944D900D1DDF2 /* IPSimpleCell.m in Sources */,
 				6235CCCD17D2B40E0094229D /* IPPlayable.m in Sources */,
+				6235CCEF17D2CDC10094229D /* IPAlbumArtCache.m in Sources */,
 				6232349017C1B022002BE554 /* UIImageView+GaussianBlur.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,14 +520,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				626FDE1617C153480088B7FF /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		626FDE3617C153B60088B7FF /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				626FDE3717C153B60088B7FF /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -688,6 +694,7 @@
 				6235CCE817D2B9470094229D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		626FDE0417C153480088B7FF /* Build configuration list for PBXProject "InfinityPlayer" */ = {
 			isa = XCConfigurationList;

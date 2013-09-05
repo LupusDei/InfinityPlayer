@@ -7,6 +7,8 @@
 //
 
 #import "IPPlayable.h"
+#import "IPAlbumArtCache.h"
+#import "IPGaussianBlurEngine.h"
 
 @implementation IPPlayable
 +(IPPlayable *) playableWithMediaItem:(MPMediaItem *)item {
@@ -15,6 +17,7 @@
     p.artistName = [item valueForProperty:MPMediaItemPropertyArtist];
     p.title = [item valueForProperty:MPMediaItemPropertyTitle];
     p.albumTitle = [item valueForProperty:MPMediaItemPropertyAlbumTitle];
+    p.albumKey = [item valueForProperty:MPMediaItemPropertyAlbumPersistentID];
     return p;
 }
 
@@ -24,8 +27,27 @@
 }
 
 -(UIImage *) albumArtworkDefaultSize {
-    MPMediaItemArtwork *art = [self.item valueForProperty:MPMediaItemPropertyArtwork];
-    return [art imageWithSize:CGSizeMake(320, 320)];
+    UIImage *image = [[IPAlbumArtCache sharedCache] imageForAlbumID:self.albumKey];
+    if (!image) {
+        MPMediaItemArtwork *art = [self.item valueForProperty:MPMediaItemPropertyArtwork];
+        image = [art imageWithSize:CGSizeMake(320, 320)];
+        if (!image) {
+            image = [UIImage imageNamed:@"MurakKanye.png"];
+        }
+        [[IPAlbumArtCache sharedCache] setImage:image forAlbumID:self.albumKey];
+    }
+    return image;
+}
+
+-(UIImage *) blurredAlbumArtworkScaledSize {
+    UIImage *image = [[IPAlbumArtCache sharedCache] blurredBackgroundImageForAlbumID:self.albumKey];
+    if (!image) {
+        NSLog(@"NO IMAGE FOUND FOR %@", self.albumTitle);
+        UIImage *norm = [self albumArtworkDefaultSize];
+        image = [IPGaussianBlurEngine blurredImageFromImage:norm withBlurFactor:ipMediumGaussianBlur andExplansionFactor:2.2];
+        [[IPAlbumArtCache sharedCache] setBlurredBackgroundImage:image forAlbumID:self.albumKey];
+    }
+    return image;
 }
 
 @end

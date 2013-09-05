@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "IPProgressBarView.h"
 
+#define SongCellID @"SongCVCell"
+
 @interface IPSongCVCell : UICollectionViewCell
 @property (strong, nonatomic) UIImageView *blurredBackgroundImageView;
 @property (strong, nonatomic) UIImageView *albumCoverImageView;

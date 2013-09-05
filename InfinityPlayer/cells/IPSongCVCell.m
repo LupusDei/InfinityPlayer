@@ -27,6 +27,7 @@
         [self.artistLabel setTextColor:[UIColor whiteColor]];
         
         self.blurredBackgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ipStandardWidth, self.height)];
+        [self.blurredBackgroundImageView setContentMode:UIViewContentModeCenter];
         
         self.albumCoverImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.artistLabel.y + self.artistLabel.height + ipMiniSpacer, ipStandardWidth, ipStandardWidth)];
         

@@ -12,6 +12,7 @@
 @interface IPPlayable : NSObject
 @property (nonatomic, strong) MPMediaItem *item;
 
+@property (nonatomic, strong) NSNumber *albumKey;
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *artistName;
@@ -21,4 +22,5 @@
 +(IPPlayable *) playableWithMediaItem:(MPMediaItem *)item;
 
 -(UIImage *) albumArtworkDefaultSize;
+-(UIImage *) blurredAlbumArtworkScaledSize;
 @end

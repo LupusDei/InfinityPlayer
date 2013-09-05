@@ -41,17 +41,14 @@
     self.playables = [NSMutableArray arrayWithCapacity:[self.mediaItemCollections count]];
     
     [self.mediaItemCollections enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
-        NSLog(@"\n~~~~~~~~AnotherCol: %@ \n", itemCol);
-        
         [[itemCol items] enumerateObjectsUsingBlock:^(MPMediaItem *item, NSUInteger idx, BOOL *stop) {
-            NSLog(@"AnotherItem: %@   \n", item);
             [self.playables addObject:[IPPlayable playableWithMediaItem:item]];
         }];
     }];
     
-    self.imageNames = @[@"chronic.png", @"drake-nothing-was-the-same-artwork-2.png", @"743c90c1.jpg", @"born_sinner.jpeg", @"MurakKanye.png"];
     self.currentSongCollectionView.delegate = self;
     self.currentSongCollectionView.dataSource = self;
+    [self.currentSongCollectionView registerClass:[IPSongCVCell class] forCellWithReuseIdentifier:SongCellID];
     
     self.player = [[IPMediaPlayer alloc] init];
 }
@@ -61,27 +58,19 @@
 }
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    IPSongCVCell *cell = [self.currentSongCollectionView dequeueReusableCellWithReuseIdentifier:@"SongCVCell" forIndexPath:indexPath];
+    IPSongCVCell *cell = [self.currentSongCollectionView dequeueReusableCellWithReuseIdentifier:SongCellID forIndexPath:indexPath];
     IPPlayable *playable = [self.playables objectAtIndex:indexPath.row];
     
     [self.player.myPlayer setQueueWithItemCollection:[MPMediaItemCollection collectionWithItems:@[playable.item]]];
 //    [self.player.myPlayer play];
-    NSLog(@"Playable with item :%@", playable.item);
     [cell.artistLabel setText:playable.artistName];
     [cell.songTitleLabel setText:playable.title];
-    UIImage *albumArt = [playable albumArtworkDefaultSize];
-    if (albumArt) {
-        [cell.blurredBackgroundImageView setImage:albumArt];
-        [cell.albumCoverImageView setImage:albumArt];
-    }
-    else {
-        NSString *imageName = [self.imageNames lastObject];
-        UIImage *albumImage = [UIImage imageNamed:imageName];
-        [cell.blurredBackgroundImageView setImage:albumImage];
-        [cell.albumCoverImageView setImage:albumImage];
-    }
-    [cell.blurredBackgroundImageView applyGaussianBlurWithFactor:ipMediumGaussianBlur andExpandImageByFactor:2.2];
-      [UIView animateWithDuration:5 animations:^{
+
+    [cell.blurredBackgroundImageView setImage:[playable blurredAlbumArtworkScaledSize]];
+    
+    [cell.albumCoverImageView setImage:[playable albumArtworkDefaultSize]];
+
+      [UIView animateWithDuration:20 animations:^{
         CGRect frame =CGRectMake(ipStandardWidth/2, cell.progressBar.y, cell.progressBar.width, cell.progressBar.height);
         cell.progressBar.frame = frame;
     }];
