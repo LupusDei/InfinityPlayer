@@ -41,6 +41,11 @@
 		627305CD17D7FD6300D1DDF2 /* IPSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305CC17D7FD6300D1DDF2 /* IPSearchVC.m */; };
 		627305D017D944D900D1DDF2 /* IPSimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305CF17D944D900D1DDF2 /* IPSimpleCell.m */; };
 		627305D217D946DF00D1DDF2 /* searchInputBorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 627305D117D946DF00D1DDF2 /* searchInputBorder@2x.png */; };
+		627305D817DA802900D1DDF2 /* IPSearchTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305D717DA802900D1DDF2 /* IPSearchTabView.m */; };
+		627305DA17DA904B00D1DDF2 /* IPMediaInspectorSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305D917DA904B00D1DDF2 /* IPMediaInspectorSpecs.m */; };
+		627305DC17DB906A00D1DDF2 /* IPSimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627305DB17DB906A00D1DDF2 /* IPSimpleCell.xib */; };
+		627305DE17DBB35800D1DDF2 /* IPAlbumSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305DD17DBB35800D1DDF2 /* IPAlbumSpec.m */; };
+		627305E117DBB44900D1DDF2 /* IPAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305E017DBB44900D1DDF2 /* IPAlbum.m */; };
 		62A38BF717D1714400B401F3 /* IPProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A38BF617D1714400B401F3 /* IPProgressBarView.m */; };
 		62A38BFA17D17AC700B401F3 /* UIView+SizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A38BF917D17AC700B401F3 /* UIView+SizeHelper.m */; };
 		62C0857817CADC6700CFA8AB /* IPMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C0857717CADC6700CFA8AB /* IPMediaPlayer.m */; };
@@ -111,6 +116,13 @@
 		627305CE17D944D900D1DDF2 /* IPSimpleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPSimpleCell.h; path = cells/IPSimpleCell.h; sourceTree = "<group>"; };
 		627305CF17D944D900D1DDF2 /* IPSimpleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPSimpleCell.m; path = cells/IPSimpleCell.m; sourceTree = "<group>"; };
 		627305D117D946DF00D1DDF2 /* searchInputBorder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchInputBorder@2x.png"; sourceTree = "<group>"; };
+		627305D617DA802900D1DDF2 /* IPSearchTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPSearchTabView.h; path = UIElements/IPSearchTabView.h; sourceTree = "<group>"; };
+		627305D717DA802900D1DDF2 /* IPSearchTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPSearchTabView.m; path = UIElements/IPSearchTabView.m; sourceTree = "<group>"; };
+		627305D917DA904B00D1DDF2 /* IPMediaInspectorSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPMediaInspectorSpecs.m; sourceTree = "<group>"; };
+		627305DB17DB906A00D1DDF2 /* IPSimpleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IPSimpleCell.xib; path = cells/IPSimpleCell.xib; sourceTree = "<group>"; };
+		627305DD17DBB35800D1DDF2 /* IPAlbumSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAlbumSpec.m; sourceTree = "<group>"; };
+		627305DF17DBB44900D1DDF2 /* IPAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPAlbum.h; path = MediaDeliverable/IPAlbum.h; sourceTree = "<group>"; };
+		627305E017DBB44900D1DDF2 /* IPAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPAlbum.m; path = MediaDeliverable/IPAlbum.m; sourceTree = "<group>"; };
 		62A38BF517D1714400B401F3 /* IPProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProgressBarView.h; sourceTree = "<group>"; };
 		62A38BF617D1714400B401F3 /* IPProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProgressBarView.m; sourceTree = "<group>"; };
 		62A38BF817D17AC700B401F3 /* UIView+SizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SizeHelper.h"; sourceTree = "<group>"; };
@@ -167,8 +179,6 @@
 			children = (
 				627305CA17D7FD2A00D1DDF2 /* Search */,
 				6235CCC417D26EF90094229D /* CurrentTrack */,
-				6235CCED17D2CDC10094229D /* IPAlbumArtCache.h */,
-				6235CCEE17D2CDC10094229D /* IPAlbumArtCache.m */,
 			);
 			name = MediaDisplay;
 			sourceTree = "<group>";
@@ -209,12 +219,16 @@
 		6235CCBB17D258E90094229D /* MediaDelivery */ = {
 			isa = PBXGroup;
 			children = (
+				6235CCED17D2CDC10094229D /* IPAlbumArtCache.h */,
+				6235CCEE17D2CDC10094229D /* IPAlbumArtCache.m */,
 				62C2C6E417C17B8D00478B15 /* IPMediaInspector.h */,
 				62C2C6E517C17B8D00478B15 /* IPMediaInspector.m */,
 				62C0857617CADC6700CFA8AB /* IPMediaPlayer.h */,
 				62C0857717CADC6700CFA8AB /* IPMediaPlayer.m */,
 				6235CCCB17D2B40E0094229D /* IPPlayable.h */,
 				6235CCCC17D2B40E0094229D /* IPPlayable.m */,
+				627305DF17DBB44900D1DDF2 /* IPAlbum.h */,
+				627305E017DBB44900D1DDF2 /* IPAlbum.m */,
 			);
 			name = MediaDelivery;
 			sourceTree = "<group>";
@@ -268,8 +282,10 @@
 			isa = PBXGroup;
 			children = (
 				6235CCC517D2AFF80094229D /* IPPlayableSpec.m */,
+				627305D917DA904B00D1DDF2 /* IPMediaInspectorSpecs.m */,
 				6235CCCA17D2B0F60094229D /* Mocks */,
 				6235CCDC17D2B9470094229D /* Supporting Files */,
+				627305DD17DBB35800D1DDF2 /* IPAlbumSpec.m */,
 			);
 			path = InfinityPlayerSpecs;
 			sourceTree = "<group>";
@@ -356,6 +372,9 @@
 				627305CC17D7FD6300D1DDF2 /* IPSearchVC.m */,
 				627305CE17D944D900D1DDF2 /* IPSimpleCell.h */,
 				627305CF17D944D900D1DDF2 /* IPSimpleCell.m */,
+				627305DB17DB906A00D1DDF2 /* IPSimpleCell.xib */,
+				627305D617DA802900D1DDF2 /* IPSearchTabView.h */,
+				627305D717DA802900D1DDF2 /* IPSearchTabView.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -450,6 +469,7 @@
 				626FDE1717C153480088B7FF /* InfoPlist.strings in Resources */,
 				626FDE1F17C153480088B7FF /* Default.png in Resources */,
 				622B94E217C836D700B71523 /* chronic.png in Resources */,
+				627305DC17DB906A00D1DDF2 /* IPSimpleCell.xib in Resources */,
 				622B94E317C836D700B71523 /* MurakKanye.png in Resources */,
 				626FDE2117C153480088B7FF /* Default@2x.png in Resources */,
 				622B94E717C84FB100B71523 /* Default-568h@2x.png in Resources */,
@@ -469,6 +489,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627305DA17DA904B00D1DDF2 /* IPMediaInspectorSpecs.m in Sources */,
+				627305DE17DBB35800D1DDF2 /* IPAlbumSpec.m in Sources */,
 				6235CCEC17D2B9B10094229D /* IPPlayableSpec.m in Sources */,
 				6235CCE917D2B9A30094229D /* IPMockMediaItem.m in Sources */,
 			);
@@ -482,8 +504,10 @@
 				627305CD17D7FD6300D1DDF2 /* IPSearchVC.m in Sources */,
 				626FDE1D17C153480088B7FF /* IPAppDelegate.m in Sources */,
 				62C0857817CADC6700CFA8AB /* IPMediaPlayer.m in Sources */,
+				627305E117DBB44900D1DDF2 /* IPAlbum.m in Sources */,
 				62A38BFA17D17AC700B401F3 /* UIView+SizeHelper.m in Sources */,
 				62C2C6E617C17B8D00478B15 /* IPMediaInspector.m in Sources */,
+				627305D817DA802900D1DDF2 /* IPSearchTabView.m in Sources */,
 				6235CCC317D2659D0094229D /* IPFontHelper.m in Sources */,
 				62A38BF717D1714400B401F3 /* IPProgressBarView.m in Sources */,
 				62C2C6EE17C1805E00478B15 /* IPScanViewController.m in Sources */,

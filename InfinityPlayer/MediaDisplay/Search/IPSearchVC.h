@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IPSearchVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface IPSearchVC : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @end

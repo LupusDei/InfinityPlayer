@@ -12,6 +12,8 @@
 
 +(IPAlbumArtCache *) sharedCache;
 
+-(void) clearCache;
+
 -(UIImage *)imageForAlbumID:(id)key;
 -(void) setImage:(UIImage *)image forAlbumID:(id)key;
 

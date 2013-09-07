@@ -13,4 +13,7 @@
 +(UIFont *) ipTitleFont;
 +(UIFont *) ipSubtitleFont;
 
++(UIFont *) ipCellTitleFont;
++(UIFont *) ipCellSubtitleFont;
+
 @end

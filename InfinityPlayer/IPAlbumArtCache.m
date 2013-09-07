@@ -39,6 +39,11 @@ static IPAlbumArtCache *currentCache = nil;
     return nil;
 }
 
+-(void) clearCache {
+    currentCache.imageCache = [NSMutableDictionary dictionary];
+    currentCache.backgroundImageCache = [NSMutableDictionary dictionary];
+}
+
 -(UIImage *)imageForAlbumID:(id)key {
     return [self.imageCache objectForKey:key];
 }

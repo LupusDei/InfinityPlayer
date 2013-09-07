@@ -11,6 +11,7 @@
 @interface IPMockMediaItem : NSObject
 
 -(id) valueForProperty:(NSString *)propertyName;
+-(id) imageWithSize:(CGSize)size;
 
 @property (nonatomic, strong) NSString  *MPMediaItemPropertyPersistentID;            // filterable
 @property (nonatomic, strong) NSString  *MPMediaItemPropertyAlbumPersistentID;       // filterable

@@ -8,28 +8,33 @@
 
 #import "IPSearchVC.h"
 #import <QuartzCore/QuartzCore.h>
+
+#import "IPMediaInspector.h"
+#import "IPPlayable.h"
+
 #import "IPGaussianBlurEngine.h"
 #import "IPFontHelper.h"
 #import "IPSimpleCell.h"
+#import "IPSearchTabView.h"
 
 #define songPosition 0
 #define artistPosition 1
 #define albumPosition 2
 
+typedef void (^IPSelectedMediaQuery)(NSString *searchString);
 
 @interface IPSearchVC ()
-
+    @property (nonatomic, strong) UITableView *mediaTableView;
+    @property (nonatomic, strong)     NSArray *media;
 @end
 
 @implementation IPSearchVC {
     UIImageView *backgroundImageView;
     UISearchBar *searchbar;
-    UIView *sortContainer;
-    UIView *selectionView;
-    UIView *songSortTab;
-    UIView *albumSortTab;
-    UIView *artistSortTab;
-    UITableView *mediaTableView;
+    IPSearchTabView *tabView;
+    int selectedMediaForm;
+    IPSelectedMediaQuery mediaQueryBlock;
+    NSString *searchableString;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,10 +49,21 @@
 {
     [super viewDidLoad];
     [self setViewLayout];
-    mediaTableView.delegate = self;
-    mediaTableView.dataSource = self;
-    [mediaTableView registerClass:[IPSimpleCell class] forCellReuseIdentifier:SimpleCellID];
+    self.mediaTableView.delegate = self;
+    self.mediaTableView.dataSource = self;
+//    [self.mediaTableView registerClass:[IPSimpleCell class] forCellReuseIdentifier:SimpleCellID];
+    [self.mediaTableView registerNib:[UINib nibWithNibName:@"IPSimpleCell" bundle:nil] forCellReuseIdentifier:SimpleCellID];
+
+    [searchbar setDelegate:self];
+    selectedMediaForm = 1;
+    [self artistTabSelected];
     
+    self.media = [IPMediaInspector getAllMediaGroupedByAlbum];
+    NSMutableArray *albums = [NSMutableArray arrayWithCapacity:[self.media count]];
+    [self.media enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
+        [albums addObject:[IPPlayable playableWithMediaItem:[itemCol representativeItem]]];
+    }];
+    self.media = albums;
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,97 +72,105 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) setViewLayout {
-    backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    [backgroundImageView setContentMode:UIViewContentModeCenter];
-    //TODO find real background image
-    UIImage *image = [UIImage imageNamed:@"MurakKanye.png"];
-    UIImage *blurred = [IPGaussianBlurEngine blurredImageFromImage:image withBlurFactor:ipMediumGaussianBlur andExplansionFactor:ipScaleFactor];
-    [backgroundImageView setImage:blurred];
-    
-    searchbar = [[UISearchBar alloc] initWithFrame:CGRectMake(ipBackButtonWidth, ipStatusBarHeight, ipStandardWidth - ipBackButtonWidth * 2, ipNavbarHeight)];
-    [searchbar setSearchBarStyle:UISearchBarStyleMinimal];
-//    [searchbar setBackgroundImage:[UIImage imageNamed:@"searchInputBorder"]];
-    
-    sortContainer = [[UIView alloc] initWithFrame:CGRectMake(-1, searchbar.height + searchbar.y, ipStandardWidth + 2, ipNavbarHeight)];
-    sortContainer.backgroundColor = [UIColor clearColor];
-    
-    songSortTab = [[UIView alloc] initWithFrame:CGRectMake(-1, 0, sortContainer.width / 3 + 1, ipNavbarHeight)];
-    songSortTab.backgroundColor = [UIColor clearColor];
-    songSortTab.layer.borderColor = [UIColor whiteColor].CGColor;
-    songSortTab.layer.borderWidth = 0.5;
-    UILabel *songLabel = [[UILabel alloc] initWithFrame:songSortTab.frame];
-    [songLabel setText:@"Songs"];
-    [songLabel setTextAlignment:NSTextAlignmentCenter];
-    [songLabel setTextColor:[UIColor whiteColor]];
-    [songLabel setFont:[IPFontHelper ipTitleFont]];
-    songLabel.backgroundColor = [UIColor clearColor];
-    [songSortTab addSubview:songLabel];
-    
-    
-    artistSortTab = [[UIView alloc] initWithFrame:CGRectMake(songSortTab.x + songSortTab.width, 0, sortContainer.width / 3 + 1, ipNavbarHeight)];
-    artistSortTab.backgroundColor = [UIColor clearColor];
-    artistSortTab.layer.borderColor = [UIColor whiteColor].CGColor;
-    artistSortTab.layer.borderWidth = 0.5;
-    UILabel *artistLabel = [[UILabel alloc] initWithFrame:songSortTab.frame];
-    [artistLabel setText:@"Artists"];
-    [artistLabel setFont:[IPFontHelper ipTitleFont]];
-    [artistLabel setTextAlignment:NSTextAlignmentCenter];
-    [artistLabel setTextColor:[UIColor whiteColor]];
-    artistLabel.backgroundColor = [UIColor clearColor];
-    [artistSortTab addSubview:artistLabel];
-    
-    albumSortTab = [[UIView alloc] initWithFrame:CGRectMake(artistSortTab.x + artistSortTab.width, 0, sortContainer.width / 3 + 1, ipNavbarHeight)];
-    albumSortTab.backgroundColor = [UIColor clearColor];
-    albumSortTab.layer.borderColor = [UIColor whiteColor].CGColor;
-    albumSortTab.layer.borderWidth = 0.5;
-    UILabel *albumLabel = [[UILabel alloc] initWithFrame:songSortTab.frame];
-    [albumLabel setText:@"Albums"];
-    [albumLabel setFont:[IPFontHelper ipTitleFont]];
-    [albumLabel setTextColor:[UIColor whiteColor]];
-    [albumLabel setTextAlignment:NSTextAlignmentCenter];
-    albumLabel.backgroundColor = [UIColor clearColor];
-    [albumSortTab addSubview:albumLabel];
-    
-    selectionView = [[UIView alloc] initWithFrame:CGRectMake(artistSortTab.x, 0, sortContainer.width / 3 + 1, ipNavbarHeight)];
-    selectionView.backgroundColor = [UIColor lightGrayColor];
-    selectionView.alpha = 0.6;
-    
-    mediaTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, sortContainer.height + sortContainer.y, ipStandardWidth, self.view.height - ipNavbarHeight * 2)];
-    mediaTableView.backgroundColor = [UIColor clearColor];
-    
-    [self.view addSubview:backgroundImageView];
-    [self.view addSubview:searchbar];
-    [self.view addSubview:sortContainer];
-    [sortContainer addSubview:selectionView];
-    [sortContainer addSubview:songSortTab];
-    [sortContainer addSubview:artistSortTab];
-    [sortContainer addSubview:albumSortTab];
-    [self.view addSubview:mediaTableView];
-}
+#pragma mark TableView Stuff
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 -(float) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 56;
+    return 54;
 }
 
 -(int) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return [self.media count];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     IPSimpleCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleCellID forIndexPath:indexPath];
-    if (indexPath.row == 0) {
-        [cell.textLabel setText:@"Hello"];
-        [cell.detailTextLabel setText:@"things"];
-    }
-    else {
-        [cell.textLabel setText:@"Bye"];
-                [cell.detailTextLabel setText:@"things"];
-    }
+    IPPlayable *playable = [self.media objectAtIndex:indexPath.row];
+    [cell.titleLabel setText:playable.albumTitle];
+    [cell.subtitleLabel setText:playable.artistName];
+    [cell.albumArtImageView setImage:playable.albumArtworkThumbnail];
     return cell;
+}
+
+#pragma mark SearchBar delegate
+
+-(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    mediaQueryBlock(searchText);
+}
+
+#pragma mark SelectionTab methods
+
+-(void) songTabSelected {
+    selectedMediaForm = 0;
+    __block IPSearchVC *blockSelf = self;
+    mediaQueryBlock = ^(NSString *searchString){
+        blockSelf.media = [IPMediaInspector getAllSongsWithSearchTitle:searchString];
+        NSLog(@"Media %@", blockSelf.media);
+        NSMutableArray *songs = [NSMutableArray arrayWithCapacity:[blockSelf.media count]];
+        [blockSelf.media enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
+            [songs addObject:[IPPlayable playableWithMediaItem:[itemCol representativeItem]]];
+        }];
+        blockSelf.media = songs;
+        [blockSelf.mediaTableView reloadData];
+    };
+}
+-(void) artistTabSelected {
+    selectedMediaForm = 1;
+    __block IPSearchVC *blockSelf = self;
+    mediaQueryBlock = ^(NSString *searchString){
+        blockSelf.media = [IPMediaInspector getAllSongsWithSearchTitle:searchString];
+        NSLog(@"Media %@", blockSelf.media);
+        NSMutableArray *songs = [NSMutableArray arrayWithCapacity:[blockSelf.media count]];
+        [blockSelf.media enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
+            [songs addObject:[IPPlayable playableWithMediaItem:[itemCol representativeItem]]];
+        }];
+        blockSelf.media = songs;
+        [blockSelf.mediaTableView reloadData];
+    };
+}
+-(void) albumTabSelected {
+    selectedMediaForm = 2;
+    __block IPSearchVC *blockSelf = self;
+    mediaQueryBlock = ^(NSString *searchString){
+        blockSelf.media = [IPMediaInspector getAllSongsWithSearchTitle:searchString];
+        NSLog(@"Media %@", blockSelf.media);
+        NSMutableArray *songs = [NSMutableArray arrayWithCapacity:[blockSelf.media count]];
+        [blockSelf.media enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
+            [songs addObject:[IPPlayable playableWithMediaItem:[itemCol representativeItem]]];
+        }];
+        blockSelf.media = songs;
+        [blockSelf.mediaTableView reloadData];
+    };
+}
+
+-(void) setViewLayout {
+    backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [backgroundImageView setContentMode:UIViewContentModeCenter];
+    //TODO find real background image
+    UIImage *image = [UIImage imageNamed:ipDefaultAlbumArtworkName];
+    UIImage *blurred = [IPGaussianBlurEngine blurredImageFromImage:image withBlurFactor:ipMediumGaussianBlur andExplansionFactor:ipScaleFactor];
+    [backgroundImageView setImage:blurred];
+    
+    searchbar = [[UISearchBar alloc] initWithFrame:CGRectMake(ipBackButtonWidth, ipStatusBarHeight, ipStandardWidth - ipBackButtonWidth * 2, ipNavbarHeight)];
+    [searchbar setSearchBarStyle:UISearchBarStyleMinimal];
+    
+    tabView = [[IPSearchTabView alloc] initWithY:searchbar.y + searchbar.height];
+    __block IPSearchVC *blockSelf = self;
+    [tabView setActionForAlbumsButton:^{[blockSelf albumTabSelected];}];
+    [tabView setActionForArtistsButton:^{[blockSelf artistTabSelected];}];
+    [tabView setActionForSongsButton:^{[blockSelf songTabSelected];}];
+    
+    // Set actions for each of the tabs
+    
+    self.mediaTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, tabView.height + tabView.y, ipStandardWidth, self.view.height - ipNavbarHeight * 2)];
+    self.mediaTableView.backgroundColor = [UIColor clearColor];
+    
+    [self.view addSubview:backgroundImageView];
+    [self.view addSubview:searchbar];
+    [self.view addSubview:tabView];
+    [self.view addSubview:self.mediaTableView];
 }
 @end

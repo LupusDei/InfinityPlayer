@@ -21,6 +21,7 @@
 
 +(IPPlayable *) playableWithMediaItem:(MPMediaItem *)item;
 
+-(UIImage *) albumArtworkThumbnail;
 -(UIImage *) albumArtworkDefaultSize;
 -(UIImage *) blurredAlbumArtworkScaledSize;
 @end

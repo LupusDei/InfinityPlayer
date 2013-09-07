@@ -9,9 +9,12 @@
 #import <XCTest/XCTest.h>
 #import "IPPlayable.h"
 #import "IPMockMediaItem.h"
+#import "IPAlbumArtCache.h"
+#import "IPUIConstants.h"
 @interface IPPlayableSpec : XCTestCase {
     IPMockMediaItem *item;
     IPPlayable *playable;
+    IPAlbumArtCache *cache;
 }
 
 @end
@@ -21,10 +24,12 @@
 - (void)setUp
 {
     [super setUp];
+    cache = [IPAlbumArtCache sharedCache];
     item = [[IPMockMediaItem alloc] init];
     item.MPMediaItemPropertyTitle = @"Cool Title";
     item.MPMediaItemPropertyArtist = @"Great Artist";
     item.MPMediaItemPropertyAlbumTitle  = @"Amazing Album";
+    item.MPMediaItemPropertyAlbumPersistentID = @"Album Key";
     
     playable = [IPPlayable playableWithMediaItem:(MPMediaItem *)item];
 }
@@ -33,15 +38,39 @@
 {
     // Put teardown code here; it will be run once, after the last test case.
     [super tearDown];
+    [cache clearCache];
 }
 
 -(void) testItHasTheRightFields {
     XCTAssertEqual(playable.title,item.MPMediaItemPropertyTitle, @"it should ahve the right title");
     XCTAssertEqual(playable.artistName,item.MPMediaItemPropertyArtist, @"it hass the right artist name");
     XCTAssertEqual(playable.albumTitle,item.MPMediaItemPropertyAlbumTitle, @"it has the right album title");
+    XCTAssertEqual(playable.albumKey,item.MPMediaItemPropertyAlbumPersistentID, @"it has the right persistent key");
 }
 -(void) testItHoldsOntoTheMediaItem {
     XCTAssertEqual(playable.item,item, @"it has the media item");
 }
+
+-(void) testItUsesTheDefaultImageIfItHasNoArtwork {
+    XCTAssertEqual([UIImage imageNamed:ipDefaultAlbumArtworkName],[playable albumArtworkDefaultSize], @"it uses the default image");
+}
+
+-(void) testItSetsTheCacheWithTheDefaultImageIfItHasNoArtwork {
+    [playable albumArtworkDefaultSize];
+    XCTAssertEqual([UIImage imageNamed:ipDefaultAlbumArtworkName],[cache imageForAlbumID:playable.albumKey], @"it stores the iamge in the cache");
+}
+
+-(void) testItUsesTheCachedImageIfItExists {
+    [cache setImage:@"thing" forAlbumID:playable.albumKey];
+    XCTAssertEqual(@"thing",[playable albumArtworkDefaultSize], @"it is the cached thing");
+}
+
+-(void) testItUsesTheCachedBlurredImage {
+    [cache setBlurredBackgroundImage:@"thing2" forAlbumID:playable.albumKey];
+    XCTAssertEqual(@"thing2",[playable blurredAlbumArtworkScaledSize], @"it is the cached thing2");
+}
+//I don't test the other cases for the blurred image because i don't want to invoke the gaussian engine in the test environment.  They work the same as the default image
+
+
 
 @end

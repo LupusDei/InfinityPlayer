@@ -11,9 +11,17 @@
 
 @implementation IPFontHelper
 +(UIFont *) ipTitleFont {
-    return [UIFont fontWithName:@"HelveticaNeue-Light" size: ipTitleHeight - 2];
+    return [UIFont fontWithName:@"HelveticaNeue-Light" size: ipTitleFontHeight];
 }
 +(UIFont *) ipSubtitleFont {
-    return [UIFont fontWithName:@"HelveticaNeue-UltraLight" size: ipTitleHeight - 2];
+    return [UIFont fontWithName:@"HelveticaNeue-UltraLight" size: ipTitleFontHeight];
+}
+
++(UIFont *) ipCellTitleFont {
+    return [UIFont fontWithName:@"HelveticaNeue-Light" size: ipCellTitleFontHeight];
+}
+
++(UIFont *) ipCellSubtitleFont {
+    return [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:ipCellSubtitleFontHeight];
 }
 @end

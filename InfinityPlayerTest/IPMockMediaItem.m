@@ -20,7 +20,20 @@
     else if ([propertyName isEqualToString:MPMediaItemPropertyAlbumTitle]) {
         return self.MPMediaItemPropertyAlbumTitle;
     }
+    else if ([propertyName isEqualToString:MPMediaItemPropertyAlbumPersistentID]) {
+        return self.MPMediaItemPropertyAlbumPersistentID;
+    }
+    else if ([propertyName isEqualToString:MPMediaItemPropertyArtwork]) {
+        return self;
+    }
     else {return @"";}
+}
+
+-(id) imageWithSize:(CGSize)size {
+    if (self.MPMediaItemPropertyArtwork) {
+        return self.MPMediaItemPropertyArtwork;
+    }
+    return nil;
 }
 
 @end

@@ -26,13 +26,22 @@
     return self;
 }
 
+-(UIImage *) albumArtworkThumbnail {
+    MPMediaItemArtwork *art = [self.item valueForProperty:MPMediaItemPropertyArtwork];
+    UIImage *image = [art imageWithSize:CGSizeMake(ipCellAlbumArtSize, ipCellAlbumArtSize)];
+    if (!image) {
+        image = [UIImage imageNamed:ipDefaultAlbumArtworkName];
+    }
+    return image;
+}
+
 -(UIImage *) albumArtworkDefaultSize {
     UIImage *image = [[IPAlbumArtCache sharedCache] imageForAlbumID:self.albumKey];
     if (!image) {
         MPMediaItemArtwork *art = [self.item valueForProperty:MPMediaItemPropertyArtwork];
         image = [art imageWithSize:CGSizeMake(320, 320)];
         if (!image) {
-            image = [UIImage imageNamed:@"MurakKanye.png"];
+            image = [UIImage imageNamed:ipDefaultAlbumArtworkName];
         }
         [[IPAlbumArtCache sharedCache] setImage:image forAlbumID:self.albumKey];
     }
@@ -42,7 +51,6 @@
 -(UIImage *) blurredAlbumArtworkScaledSize {
     UIImage *image = [[IPAlbumArtCache sharedCache] blurredBackgroundImageForAlbumID:self.albumKey];
     if (!image) {
-        NSLog(@"NO IMAGE FOUND FOR %@", self.albumTitle);
         UIImage *norm = [self albumArtworkDefaultSize];
         image = [IPGaussianBlurEngine blurredImageFromImage:norm withBlurFactor:ipMediumGaussianBlur andExplansionFactor:2.2];
         [[IPAlbumArtCache sharedCache] setBlurredBackgroundImage:image forAlbumID:self.albumKey];
