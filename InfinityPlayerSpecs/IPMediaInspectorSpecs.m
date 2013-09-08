@@ -10,6 +10,10 @@
 #import "IPMediaInspector.h"
 #import <MediaPlayer/MediaPlayer.h>
 
+#import "IPAlbum.h"
+#import "IPMockHelper.h"
+
+
 @interface IPMediaInspectorSpecs : XCTestCase
 
 @end
@@ -69,6 +73,18 @@
 }
 
 -(void) testItReturnsAlbumsWhenSearchingForAlbums {
+    NSArray *fakeAlbumQueryResponse = @[[IPMockHelper itemCollectionWithSingleItem], [IPMockHelper itemCollectionWithOtherItem]];
+    NSArray *albums = [IPMediaInspector albumsFromItemCollections:fakeAlbumQueryResponse];
     
+    XCTAssertEqual([IPAlbum class],[[albums objectAtIndex:0] class], @"it is an album");
+    XCTAssertEqual([IPAlbum class],[[albums objectAtIndex:1] class], @"it is an album");
+}
+
+-(void) testItReturnsPlayablesWhenSearchingForSongs {
+    NSArray *fakeSongQueryResponse = @[[IPMockHelper itemWithDefaultValues], [IPMockHelper itemWithOtherValues]];
+    NSArray *songs = [IPMediaInspector playablesFromMediaItems:fakeSongQueryResponse];
+    
+    XCTAssertEqual([IPPlayable class],[[songs objectAtIndex:0] class], @"it is a playable");
+    XCTAssertEqual([IPPlayable class],[[songs objectAtIndex:1] class], @"it is a playable");
 }
 @end

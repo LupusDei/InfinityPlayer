@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IPPlayable.h"
 
 @interface IPAlbum : NSObject
+@property (nonatomic, strong) MPMediaItemCollection *itemCollection;
+@property (nonatomic, strong) NSArray *songs;
+
++(IPAlbum *) albumWithMediaCollection:(MPMediaItemCollection *)itemCol;
+
+-(NSString *)title;
+-(NSString *)artistName;
+-(NSNumber *)key;
+-(int) songCount;
+-(UIImage *)albumArtworkThumbnail;
 
 @end

@@ -9,6 +9,7 @@
 #import "IPAlbumArtCache.h"
 
 @interface IPAlbumArtCache()
+@property (nonatomic, strong) NSMutableDictionary *thumbnailCache;
 @property (nonatomic, strong) NSMutableDictionary *imageCache;
 @property (nonatomic, strong) NSMutableDictionary *backgroundImageCache;
 @end
@@ -22,6 +23,7 @@ static IPAlbumArtCache *currentCache = nil;
     @synchronized(self) {
         if (currentCache == nil) {
             currentCache = [[self alloc] init];
+            currentCache.thumbnailCache = [NSMutableDictionary dictionary];
             currentCache.imageCache = [NSMutableDictionary dictionary];
             currentCache.backgroundImageCache = [NSMutableDictionary dictionary];
         }
@@ -42,6 +44,13 @@ static IPAlbumArtCache *currentCache = nil;
 -(void) clearCache {
     currentCache.imageCache = [NSMutableDictionary dictionary];
     currentCache.backgroundImageCache = [NSMutableDictionary dictionary];
+}
+
+-(UIImage *)thumbnailForAlbumID:(id)key {
+    return [self.thumbnailCache objectForKey:key];
+}
+-(void) setThumbnail:(UIImage *)image forAlbumID:(id)key {
+    [self.thumbnailCache setObject:image forKey:key];
 }
 
 -(UIImage *)imageForAlbumID:(id)key {

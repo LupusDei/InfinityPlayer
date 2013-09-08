@@ -46,6 +46,8 @@
 		627305DC17DB906A00D1DDF2 /* IPSimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627305DB17DB906A00D1DDF2 /* IPSimpleCell.xib */; };
 		627305DE17DBB35800D1DDF2 /* IPAlbumSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305DD17DBB35800D1DDF2 /* IPAlbumSpec.m */; };
 		627305E117DBB44900D1DDF2 /* IPAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305E017DBB44900D1DDF2 /* IPAlbum.m */; };
+		627305E417DBB7B500D1DDF2 /* IPMockMediaItemCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305E317DBB7B500D1DDF2 /* IPMockMediaItemCollection.m */; };
+		627305E717DBC6A100D1DDF2 /* IPMockHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 627305E617DBC6A100D1DDF2 /* IPMockHelper.m */; };
 		62A38BF717D1714400B401F3 /* IPProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A38BF617D1714400B401F3 /* IPProgressBarView.m */; };
 		62A38BFA17D17AC700B401F3 /* UIView+SizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A38BF917D17AC700B401F3 /* UIView+SizeHelper.m */; };
 		62C0857817CADC6700CFA8AB /* IPMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C0857717CADC6700CFA8AB /* IPMediaPlayer.m */; };
@@ -123,6 +125,10 @@
 		627305DD17DBB35800D1DDF2 /* IPAlbumSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAlbumSpec.m; sourceTree = "<group>"; };
 		627305DF17DBB44900D1DDF2 /* IPAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPAlbum.h; path = MediaDeliverable/IPAlbum.h; sourceTree = "<group>"; };
 		627305E017DBB44900D1DDF2 /* IPAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPAlbum.m; path = MediaDeliverable/IPAlbum.m; sourceTree = "<group>"; };
+		627305E217DBB7B500D1DDF2 /* IPMockMediaItemCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPMockMediaItemCollection.h; sourceTree = "<group>"; };
+		627305E317DBB7B500D1DDF2 /* IPMockMediaItemCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPMockMediaItemCollection.m; sourceTree = "<group>"; };
+		627305E517DBC6A100D1DDF2 /* IPMockHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPMockHelper.h; sourceTree = "<group>"; };
+		627305E617DBC6A100D1DDF2 /* IPMockHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPMockHelper.m; sourceTree = "<group>"; };
 		62A38BF517D1714400B401F3 /* IPProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProgressBarView.h; sourceTree = "<group>"; };
 		62A38BF617D1714400B401F3 /* IPProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProgressBarView.m; sourceTree = "<group>"; };
 		62A38BF817D17AC700B401F3 /* UIView+SizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SizeHelper.h"; sourceTree = "<group>"; };
@@ -273,6 +279,10 @@
 			children = (
 				6235CCC717D2B0F20094229D /* IPMockMediaItem.h */,
 				6235CCC817D2B0F20094229D /* IPMockMediaItem.m */,
+				627305E217DBB7B500D1DDF2 /* IPMockMediaItemCollection.h */,
+				627305E317DBB7B500D1DDF2 /* IPMockMediaItemCollection.m */,
+				627305E517DBC6A100D1DDF2 /* IPMockHelper.h */,
+				627305E617DBC6A100D1DDF2 /* IPMockHelper.m */,
 			);
 			name = Mocks;
 			path = ../InfinityPlayerTest;
@@ -283,9 +293,9 @@
 			children = (
 				6235CCC517D2AFF80094229D /* IPPlayableSpec.m */,
 				627305D917DA904B00D1DDF2 /* IPMediaInspectorSpecs.m */,
+				627305DD17DBB35800D1DDF2 /* IPAlbumSpec.m */,
 				6235CCCA17D2B0F60094229D /* Mocks */,
 				6235CCDC17D2B9470094229D /* Supporting Files */,
-				627305DD17DBB35800D1DDF2 /* IPAlbumSpec.m */,
 			);
 			path = InfinityPlayerSpecs;
 			sourceTree = "<group>";
@@ -489,9 +499,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627305E417DBB7B500D1DDF2 /* IPMockMediaItemCollection.m in Sources */,
 				627305DA17DA904B00D1DDF2 /* IPMediaInspectorSpecs.m in Sources */,
 				627305DE17DBB35800D1DDF2 /* IPAlbumSpec.m in Sources */,
 				6235CCEC17D2B9B10094229D /* IPPlayableSpec.m in Sources */,
+				627305E717DBC6A100D1DDF2 /* IPMockHelper.m in Sources */,
 				6235CCE917D2B9A30094229D /* IPMockMediaItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

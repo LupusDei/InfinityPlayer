@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "IPPlayable.h"
-#import "IPMockMediaItem.h"
+#import "IPMockHelper.h"
 #import "IPAlbumArtCache.h"
 #import "IPUIConstants.h"
 @interface IPPlayableSpec : XCTestCase {
@@ -25,11 +25,7 @@
 {
     [super setUp];
     cache = [IPAlbumArtCache sharedCache];
-    item = [[IPMockMediaItem alloc] init];
-    item.MPMediaItemPropertyTitle = @"Cool Title";
-    item.MPMediaItemPropertyArtist = @"Great Artist";
-    item.MPMediaItemPropertyAlbumTitle  = @"Amazing Album";
-    item.MPMediaItemPropertyAlbumPersistentID = @"Album Key";
+    item = [IPMockHelper itemWithDefaultValues];
     
     playable = [IPPlayable playableWithMediaItem:(MPMediaItem *)item];
 }
@@ -71,6 +67,13 @@
 }
 //I don't test the other cases for the blurred image because i don't want to invoke the gaussian engine in the test environment.  They work the same as the default image
 
+-(void) testItUsesTheDefaultImageForTheThumbnail {
+    XCTAssertEqual([UIImage imageNamed:ipDefaultAlbumArtworkName],[playable albumArtworkThumbnail], @"it uses the default image");
+}
+-(void) testItCachesTheThumbnail {
+    [playable albumArtworkThumbnail];
+    XCTAssertEqual([UIImage imageNamed:ipDefaultAlbumArtworkName],[cache thumbnailForAlbumID:playable.albumKey], @"it stores the iamge in the cache");
+}
 
 
 @end

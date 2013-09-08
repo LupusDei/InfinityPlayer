@@ -14,11 +14,13 @@
 +(NSArray *) getAllMedia;
 +(NSArray *) getAllMediaGroupedByAlbum;
 +(MPMediaQuery *) queryForAlbumsWithSearchTitle:(NSString *)title;
++(NSArray *) albumsFromItemCollections:(NSArray *)itemCols;
 +(NSArray *) getAllAlbumsWithSearchTitle:(NSString *)title;
 
 +(MPMediaQuery *) queryForArtistsWithSearchName:(NSString *)name;
 +(NSArray *) getAllArtistsWithSearchName:(NSString *)name;
 
 +(MPMediaQuery *) queryForSongsWithSearchTitle:(NSString *)title;
++(NSArray *) playablesFromMediaItems:(NSArray *)items;
 +(NSArray *) getAllSongsWithSearchTitle:(NSString *)title;
 @end

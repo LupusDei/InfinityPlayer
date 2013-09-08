@@ -14,6 +14,9 @@
 
 -(void) clearCache;
 
+-(UIImage *)thumbnailForAlbumID:(id)key;
+-(void) setThumbnail:(UIImage *)image forAlbumID:(id)key;
+
 -(UIImage *)imageForAlbumID:(id)key;
 -(void) setImage:(UIImage *)image forAlbumID:(id)key;
 

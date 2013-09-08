@@ -7,6 +7,7 @@
 //
 
 #import "IPMediaInspector.h"
+#import "IPAlbum.h"
 
 @implementation IPMediaInspector
 
@@ -26,8 +27,15 @@
     [query addFilterPredicate:pred];
     return query;
 }
++(NSArray *) albumsFromItemCollections:(NSArray *)itemCollections {
+    NSMutableArray *albums = [NSMutableArray arrayWithCapacity:[itemCollections count]];
+    [itemCollections enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
+        [albums addObject:[IPAlbum albumWithMediaCollection:itemCol]];
+    }];
+    return albums;
+}
 +(NSArray *) getAllAlbumsWithSearchTitle:(NSString *)title {
-    return [[IPMediaInspector queryForAlbumsWithSearchTitle:title] collections];
+    return [IPMediaInspector albumsFromItemCollections:[[IPMediaInspector queryForAlbumsWithSearchTitle:title] collections]];
 }
 
 +(MPMediaQuery *) queryForArtistsWithSearchName:(NSString *)name {
@@ -46,7 +54,14 @@
     [query addFilterPredicate:pred];
     return query;
 }
++(NSArray *) playablesFromMediaItems:(NSArray *)items {
+    NSMutableArray *playables = [NSMutableArray arrayWithCapacity:[items count]];
+    [items enumerateObjectsUsingBlock:^(MPMediaItem *item, NSUInteger idx, BOOL *stop) {
+        [playables addObject:[IPPlayable playableWithMediaItem:item]];
+    }];
+    return playables;
+}
 +(NSArray *) getAllSongsWithSearchTitle:(NSString *)title {
-    return [[IPMediaInspector queryForSongsWithSearchTitle:title] collections];
+    return [IPMediaInspector playablesFromMediaItems:[[IPMediaInspector queryForSongsWithSearchTitle:title] items]];
 }
 @end

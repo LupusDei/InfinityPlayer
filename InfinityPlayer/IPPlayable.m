@@ -27,10 +27,14 @@
 }
 
 -(UIImage *) albumArtworkThumbnail {
-    MPMediaItemArtwork *art = [self.item valueForProperty:MPMediaItemPropertyArtwork];
-    UIImage *image = [art imageWithSize:CGSizeMake(ipCellAlbumArtSize, ipCellAlbumArtSize)];
+    UIImage *image = [[IPAlbumArtCache sharedCache] thumbnailForAlbumID:self.albumKey];
     if (!image) {
-        image = [UIImage imageNamed:ipDefaultAlbumArtworkName];
+        MPMediaItemArtwork *art = [self.item valueForProperty:MPMediaItemPropertyArtwork];
+        image = [art imageWithSize:CGSizeMake(ipCellAlbumArtSize, ipCellAlbumArtSize)];
+        if (!image) {
+            image = [UIImage imageNamed:ipDefaultAlbumArtworkName];
+        }
+        [[IPAlbumArtCache sharedCache] setThumbnail:image forAlbumID:self.albumKey];
     }
     return image;
 }

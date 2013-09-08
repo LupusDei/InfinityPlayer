@@ -11,6 +11,7 @@
 
 #import "IPMediaInspector.h"
 #import "IPPlayable.h"
+#import "IPAlbum.h"
 
 #import "IPGaussianBlurEngine.h"
 #import "IPFontHelper.h"
@@ -22,6 +23,7 @@
 #define albumPosition 2
 
 typedef void (^IPSelectedMediaQuery)(NSString *searchString);
+typedef void (^IPMediaCellSetup)(IPSimpleCell *cell, id mediaItem);
 
 @interface IPSearchVC ()
     @property (nonatomic, strong) UITableView *mediaTableView;
@@ -34,6 +36,7 @@ typedef void (^IPSelectedMediaQuery)(NSString *searchString);
     IPSearchTabView *tabView;
     int selectedMediaForm;
     IPSelectedMediaQuery mediaQueryBlock;
+    IPMediaCellSetup mediaCellSetupBlock;
     NSString *searchableString;
 }
 
@@ -56,14 +59,8 @@ typedef void (^IPSelectedMediaQuery)(NSString *searchString);
 
     [searchbar setDelegate:self];
     selectedMediaForm = 1;
-    [self artistTabSelected];
-    
-    self.media = [IPMediaInspector getAllMediaGroupedByAlbum];
-    NSMutableArray *albums = [NSMutableArray arrayWithCapacity:[self.media count]];
-    [self.media enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
-        [albums addObject:[IPPlayable playableWithMediaItem:[itemCol representativeItem]]];
-    }];
-    self.media = albums;
+    searchableString = @"";
+    [self songTabSelected];
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,17 +85,21 @@ typedef void (^IPSelectedMediaQuery)(NSString *searchString);
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     IPSimpleCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleCellID forIndexPath:indexPath];
-    IPPlayable *playable = [self.media objectAtIndex:indexPath.row];
-    [cell.titleLabel setText:playable.albumTitle];
-    [cell.subtitleLabel setText:playable.artistName];
-    [cell.albumArtImageView setImage:playable.albumArtworkThumbnail];
+    id mediaItem = [self.media objectAtIndex:indexPath.row];
+    mediaCellSetupBlock(cell,mediaItem);
     return cell;
 }
 
 #pragma mark SearchBar delegate
 
 -(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    mediaQueryBlock(searchText);
+    if ([searchText hasSuffix:@"\\n"]) {
+        [searchBar resignFirstResponder];
+    }
+    else {
+        searchableString = searchText;
+        mediaQueryBlock(searchableString);
+    }
 }
 
 #pragma mark SelectionTab methods
@@ -106,23 +107,22 @@ typedef void (^IPSelectedMediaQuery)(NSString *searchString);
 -(void) songTabSelected {
     selectedMediaForm = 0;
     __block IPSearchVC *blockSelf = self;
+    mediaCellSetupBlock = ^(IPSimpleCell *cell, IPPlayable *playable) {
+        [cell.titleLabel setText:playable.title];
+        [cell.subtitleLabel setText:playable.artistName];
+        [cell.albumArtImageView setImage:playable.albumArtworkThumbnail];
+    };
     mediaQueryBlock = ^(NSString *searchString){
         blockSelf.media = [IPMediaInspector getAllSongsWithSearchTitle:searchString];
-        NSLog(@"Media %@", blockSelf.media);
-        NSMutableArray *songs = [NSMutableArray arrayWithCapacity:[blockSelf.media count]];
-        [blockSelf.media enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
-            [songs addObject:[IPPlayable playableWithMediaItem:[itemCol representativeItem]]];
-        }];
-        blockSelf.media = songs;
         [blockSelf.mediaTableView reloadData];
     };
+    mediaQueryBlock(searchableString);
 }
 -(void) artistTabSelected {
     selectedMediaForm = 1;
     __block IPSearchVC *blockSelf = self;
     mediaQueryBlock = ^(NSString *searchString){
         blockSelf.media = [IPMediaInspector getAllSongsWithSearchTitle:searchString];
-        NSLog(@"Media %@", blockSelf.media);
         NSMutableArray *songs = [NSMutableArray arrayWithCapacity:[blockSelf.media count]];
         [blockSelf.media enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
             [songs addObject:[IPPlayable playableWithMediaItem:[itemCol representativeItem]]];
@@ -134,16 +134,16 @@ typedef void (^IPSelectedMediaQuery)(NSString *searchString);
 -(void) albumTabSelected {
     selectedMediaForm = 2;
     __block IPSearchVC *blockSelf = self;
+    mediaCellSetupBlock = ^(IPSimpleCell *cell, IPAlbum *album) {
+        [cell.titleLabel setText:album.title];
+        [cell.subtitleLabel setText:album.artistName];
+        [cell.albumArtImageView setImage:album.albumArtworkThumbnail];
+    };
     mediaQueryBlock = ^(NSString *searchString){
-        blockSelf.media = [IPMediaInspector getAllSongsWithSearchTitle:searchString];
-        NSLog(@"Media %@", blockSelf.media);
-        NSMutableArray *songs = [NSMutableArray arrayWithCapacity:[blockSelf.media count]];
-        [blockSelf.media enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
-            [songs addObject:[IPPlayable playableWithMediaItem:[itemCol representativeItem]]];
-        }];
-        blockSelf.media = songs;
+        blockSelf.media = [IPMediaInspector getAllAlbumsWithSearchTitle:searchString];
         [blockSelf.mediaTableView reloadData];
     };
+    mediaQueryBlock(searchableString);
 }
 
 -(void) setViewLayout {
