@@ -11,6 +11,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 #import "IPAlbum.h"
+#import "IPArtist.h"
 #import "IPMockHelper.h"
 
 
@@ -89,7 +90,7 @@
 }
 -(void) testItReturnsArtistsWhenSearchingForArtists {
     NSArray *fakeArtistQueryResponse = @[[IPMockHelper itemCollectionWithSingleItem], [IPMockHelper itemCollectionWithOtherItem]];
-    NSArray *artists = [IPMediaInspector artistsFromItemCollection:fakeArtistQueryResponse];
+    NSArray *artists = [IPMediaInspector artistsFromItemCollections:fakeArtistQueryResponse];
     
     XCTAssertEqual([IPArtist class],[[artists objectAtIndex:0] class], @"it is an artist");
     XCTAssertEqual([IPArtist class],[[artists objectAtIndex:1] class], @"it is an artist");

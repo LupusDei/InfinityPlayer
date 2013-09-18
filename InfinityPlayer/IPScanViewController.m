@@ -14,15 +14,23 @@
 
 #import "UIImageView+GaussianBlur.h"
 
+#define StoryboardID @"ScanViewController"
+
 @interface IPScanViewController ()
 @property (nonatomic, strong) NSArray *imageNames;
 @property (nonatomic, strong) NSArray *mediaItemCollections;
-@property (nonatomic, strong) NSMutableArray *playables;
 @property (nonatomic, strong) UIImage *albumArtwork;
 @property (nonatomic, strong) IPMediaPlayer *player;
 @end
 
 @implementation IPScanViewController
+
++(IPScanViewController *) playerVCWithPlayables:(NSArray *)playables {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    IPScanViewController *vc = [storyboard instantiateViewControllerWithIdentifier:StoryboardID];
+    vc.playables = playables;
+    return vc;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,13 +44,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.playables = [NSMutableArray arrayWithCapacity:[self.mediaItemCollections count]];
-    
-    [self.mediaItemCollections enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
-        [[itemCol items] enumerateObjectsUsingBlock:^(MPMediaItem *item, NSUInteger idx, BOOL *stop) {
-            [self.playables addObject:[IPPlayable playableWithMediaItem:item]];
-        }];
-    }];
     
     self.currentSongCollectionView.delegate = self;
     self.currentSongCollectionView.dataSource = self;
@@ -60,7 +61,7 @@
     IPPlayable *playable = [self.playables objectAtIndex:indexPath.row];
     
     [self.player.myPlayer setQueueWithItemCollection:[MPMediaItemCollection collectionWithItems:@[playable.item]]];
-//    [self.player.myPlayer play];
+    [self.player.myPlayer play];
     [cell.artistLabel setText:playable.artistName];
     [cell.songTitleLabel setText:playable.title];
 

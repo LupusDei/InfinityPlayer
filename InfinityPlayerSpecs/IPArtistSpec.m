@@ -8,27 +8,40 @@
 
 #import <XCTest/XCTest.h>
 
+#import "IPArtist.h"
+
+#import "IPUIConstants.h"
+#import "IPMockHelper.h"
+
+
 @interface IPArtistSpec : XCTestCase
 
 @end
 
-@implementation IPArtistSpec
+@implementation IPArtistSpec {
+    IPArtist *artist;
+    IPMockMediaItemCollection *itemCol;
+}
 
 - (void)setUp
 {
+    itemCol = [IPMockHelper itemCollectionWithSingleItem];
+    artist = [IPArtist artistWithMediaCollection:(MPMediaItemCollection *)itemCol];
     [super setUp];
-    // Put setup code here; it will be run once, before the first test case.
 }
 
 - (void)tearDown
 {
-    // Put teardown code here; it will be run once, after the last test case.
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+-(void) testAnArtistHasTheRightFields {
+    XCTAssertNotNil(artist, @"it should not be nil");
+    XCTAssertEqual(itemCol,artist.itemCollection, @"it has the item collection");
+    XCTAssertEqual(ipMockDefaultArtistName,artist.name, @"it has the artist name");
 }
 
+-(void) testItReturnsTheSongsAsPlayables {
+    XCTAssertEqual([IPPlayable class],[[artist.songs lastObject] class], @"it returns playables");
+}
 @end

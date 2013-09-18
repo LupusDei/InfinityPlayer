@@ -10,5 +10,8 @@
 
 @interface IPScanViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *currentSongCollectionView;
+@property (nonatomic, strong) NSArray *playables;
+
++(IPScanViewController *) playerVCWithPlayables:(NSArray *)playables;
 
 @end

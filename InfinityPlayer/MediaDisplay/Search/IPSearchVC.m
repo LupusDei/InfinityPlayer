@@ -9,7 +9,12 @@
 #import "IPSearchVC.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "IPScanViewController.h"
+
 #import "IPMediaInspector.h"
+#import "IPAlbum.h"
+#import "IPArtist.h"
+#import "IPPlayable.h"
 
 #import "IPGaussianBlurEngine.h"
 #import "IPFontHelper.h"
@@ -52,13 +57,15 @@ typedef void (^IPMediaCellSetup)(IPSimpleCell *cell, id mediaItem);
     [self setViewLayout];
     self.mediaTableView.delegate = self;
     self.mediaTableView.dataSource = self;
-//    [self.mediaTableView registerClass:[IPSimpleCell class] forCellReuseIdentifier:SimpleCellID];
-    [self.mediaTableView registerNib:[UINib nibWithNibName:@"IPSimpleCell" bundle:nil] forCellReuseIdentifier:SimpleCellID];
+    [self.mediaTableView registerClass:[IPSimpleCell class] forCellReuseIdentifier:SimpleCellID];
+//    [self.mediaTableView registerNib:[UINib nibWithNibName:@"IPSimpleCell" bundle:nil] forCellReuseIdentifier:SimpleCellID];
 
     [searchbar setDelegate:self];
     selectedMediaForm = 1;
     searchableString = @"";
-    [self artistTabSelected];
+    [self songTabSelected];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,7 +81,7 @@ typedef void (^IPMediaCellSetup)(IPSimpleCell *cell, id mediaItem);
 }
 
 -(float) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 54;
+    return SimpleCellHeight;
 }
 
 -(int) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -86,6 +93,12 @@ typedef void (^IPMediaCellSetup)(IPSimpleCell *cell, id mediaItem);
     id mediaItem = [self.media objectAtIndex:indexPath.row];
     mediaCellSetupBlock(cell,mediaItem);
     return cell;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    IPPlayable *mediaItem = [self.media objectAtIndex:indexPath.row];
+    IPScanViewController *vc = [IPScanViewController playerVCWithPlayables:@[mediaItem]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark SearchBar delegate
@@ -112,9 +125,7 @@ typedef void (^IPMediaCellSetup)(IPSimpleCell *cell, id mediaItem);
     selectedMediaForm = 0;
     __block IPSearchVC *blockSelf = self;
     mediaCellSetupBlock = ^(IPSimpleCell *cell, IPPlayable *playable) {
-        [cell.titleLabel setText:playable.title];
-        [cell.subtitleLabel setText:playable.artistName];
-        cell.albumArtImageView.hidden = YES;
+        [cell formatCellForSongWithTitle:playable.title andArtistName:playable.artistName];
     };
     mediaQueryBlock = ^(NSString *searchString){
         blockSelf.media = [IPMediaInspector getAllSongsWithSearchTitle:searchString];
@@ -126,23 +137,19 @@ typedef void (^IPMediaCellSetup)(IPSimpleCell *cell, id mediaItem);
     selectedMediaForm = 1;
     __block IPSearchVC *blockSelf = self;
     mediaCellSetupBlock = ^(IPSimpleCell *cell, IPArtist *artist) {
-        [cell.titleLabel setText:artist.name];
-        [cell.subtitleLabel setText:@""];
-        cell.albumArtImageView.hidden = YES;
+        [cell formatCellForArtistWithName:artist.name];
     };
     mediaQueryBlock = ^(NSString *searchString){
         blockSelf.media = [IPMediaInspector getAllArtistsWithSearchName:searchString];
         [blockSelf.mediaTableView reloadData];
     };
+    mediaQueryBlock(searchableString);
 }
 -(void) albumTabSelected {
     selectedMediaForm = 2;
     __block IPSearchVC *blockSelf = self;
     mediaCellSetupBlock = ^(IPSimpleCell *cell, IPAlbum *album) {
-        [cell.titleLabel setText:album.title];
-        [cell.subtitleLabel setText:album.artistName];
-        cell.albumArtImageView.hidden = NO;
-        [cell.albumArtImageView setImage:album.albumArtworkThumbnail];
+        [cell formatCellForAlbumWithTitle:album.title andArtistName:album.artistName];
     };
     mediaQueryBlock = ^(NSString *searchString){
         blockSelf.media = [IPMediaInspector getAllAlbumsWithSearchTitle:searchString];
@@ -152,6 +159,7 @@ typedef void (^IPMediaCellSetup)(IPSimpleCell *cell, id mediaItem);
 }
 
 -(void) setViewLayout {
+//    self.view.bounds = CGRectMake(self.view.x, self.view.y - 44, self.view.width, self.view.height);
     backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     [backgroundImageView setContentMode:UIViewContentModeCenter];
     //TODO find real background image

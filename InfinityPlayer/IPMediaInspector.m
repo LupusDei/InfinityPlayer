@@ -7,6 +7,8 @@
 //
 
 #import "IPMediaInspector.h"
+#import "IPAlbum.h"
+#import "IPArtist.h"
 
 @implementation IPMediaInspector
 

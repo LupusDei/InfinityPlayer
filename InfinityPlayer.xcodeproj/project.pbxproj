@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6219044417E917B7002ECC07 /* IPArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 6219044317E917B7002ECC07 /* IPArtist.m */; };
+		6219044617E91813002ECC07 /* IPArtistSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6219044517E91813002ECC07 /* IPArtistSpec.m */; };
+		6219044917E91C94002ECC07 /* IPMediaContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6219044817E91C94002ECC07 /* IPMediaContainer.m */; };
 		622B94DF17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94DE17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png */; };
 		622B94E217C836D700B71523 /* chronic.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94E017C836D700B71523 /* chronic.png */; };
 		622B94E317C836D700B71523 /* MurakKanye.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B94E117C836D700B71523 /* MurakKanye.png */; };
@@ -67,6 +70,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6219044217E917B7002ECC07 /* IPArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPArtist.h; path = MediaDeliverable/IPArtist.h; sourceTree = "<group>"; };
+		6219044317E917B7002ECC07 /* IPArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPArtist.m; path = MediaDeliverable/IPArtist.m; sourceTree = "<group>"; };
+		6219044517E91813002ECC07 /* IPArtistSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPArtistSpec.m; sourceTree = "<group>"; };
+		6219044717E91C94002ECC07 /* IPMediaContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPMediaContainer.h; path = MediaDeliverable/IPMediaContainer.h; sourceTree = "<group>"; };
+		6219044817E91C94002ECC07 /* IPMediaContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPMediaContainer.m; path = MediaDeliverable/IPMediaContainer.m; sourceTree = "<group>"; };
 		622B94DE17C8363D00B71523 /* drake-nothing-was-the-same-artwork-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drake-nothing-was-the-same-artwork-2.png"; sourceTree = "<group>"; };
 		622B94E017C836D700B71523 /* chronic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chronic.png; sourceTree = "<group>"; };
 		622B94E117C836D700B71523 /* MurakKanye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MurakKanye.png; sourceTree = "<group>"; };
@@ -171,6 +179,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6219044117E9179C002ECC07 /* MediaForms */ = {
+			isa = PBXGroup;
+			children = (
+				6235CCCB17D2B40E0094229D /* IPPlayable.h */,
+				6235CCCC17D2B40E0094229D /* IPPlayable.m */,
+				627305DF17DBB44900D1DDF2 /* IPAlbum.h */,
+				627305E017DBB44900D1DDF2 /* IPAlbum.m */,
+				6219044217E917B7002ECC07 /* IPArtist.h */,
+				6219044317E917B7002ECC07 /* IPArtist.m */,
+				6219044717E91C94002ECC07 /* IPMediaContainer.h */,
+				6219044817E91C94002ECC07 /* IPMediaContainer.m */,
+			);
+			name = MediaForms;
+			sourceTree = "<group>";
+		};
 		622B94E417C84FA100B71523 /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,16 +248,13 @@
 		6235CCBB17D258E90094229D /* MediaDelivery */ = {
 			isa = PBXGroup;
 			children = (
+				6219044117E9179C002ECC07 /* MediaForms */,
 				6235CCED17D2CDC10094229D /* IPAlbumArtCache.h */,
 				6235CCEE17D2CDC10094229D /* IPAlbumArtCache.m */,
 				62C2C6E417C17B8D00478B15 /* IPMediaInspector.h */,
 				62C2C6E517C17B8D00478B15 /* IPMediaInspector.m */,
 				62C0857617CADC6700CFA8AB /* IPMediaPlayer.h */,
 				62C0857717CADC6700CFA8AB /* IPMediaPlayer.m */,
-				6235CCCB17D2B40E0094229D /* IPPlayable.h */,
-				6235CCCC17D2B40E0094229D /* IPPlayable.m */,
-				627305DF17DBB44900D1DDF2 /* IPAlbum.h */,
-				627305E017DBB44900D1DDF2 /* IPAlbum.m */,
 			);
 			name = MediaDelivery;
 			sourceTree = "<group>";
@@ -296,6 +316,7 @@
 				627305DD17DBB35800D1DDF2 /* IPAlbumSpec.m */,
 				6235CCCA17D2B0F60094229D /* Mocks */,
 				6235CCDC17D2B9470094229D /* Supporting Files */,
+				6219044517E91813002ECC07 /* IPArtistSpec.m */,
 			);
 			path = InfinityPlayerSpecs;
 			sourceTree = "<group>";
@@ -501,6 +522,7 @@
 			files = (
 				627305E417DBB7B500D1DDF2 /* IPMockMediaItemCollection.m in Sources */,
 				627305DA17DA904B00D1DDF2 /* IPMediaInspectorSpecs.m in Sources */,
+				6219044617E91813002ECC07 /* IPArtistSpec.m in Sources */,
 				627305DE17DBB35800D1DDF2 /* IPAlbumSpec.m in Sources */,
 				6235CCEC17D2B9B10094229D /* IPPlayableSpec.m in Sources */,
 				627305E717DBC6A100D1DDF2 /* IPMockHelper.m in Sources */,
@@ -514,8 +536,10 @@
 			files = (
 				626FDE1917C153480088B7FF /* main.m in Sources */,
 				627305CD17D7FD6300D1DDF2 /* IPSearchVC.m in Sources */,
+				6219044417E917B7002ECC07 /* IPArtist.m in Sources */,
 				626FDE1D17C153480088B7FF /* IPAppDelegate.m in Sources */,
 				62C0857817CADC6700CFA8AB /* IPMediaPlayer.m in Sources */,
+				6219044917E91C94002ECC07 /* IPMediaContainer.m in Sources */,
 				627305E117DBB44900D1DDF2 /* IPAlbum.m in Sources */,
 				62A38BFA17D17AC700B401F3 /* UIView+SizeHelper.m in Sources */,
 				62C2C6E617C17B8D00478B15 /* IPMediaInspector.m in Sources */,

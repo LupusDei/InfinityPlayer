@@ -38,6 +38,7 @@
 
 
 #pragma mark Cells
+#define ipCellIndent 15
 #define ipCellTitleFontHeight 16
 #define ipCellTitleHeight (ipCellTitleFontHeight + 3)
 #define ipCellSubtitleFontHeight (ipCellTitleFontHeight * 3 / 4)

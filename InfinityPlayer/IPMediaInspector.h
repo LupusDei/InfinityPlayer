@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
-#import "IPAlbum.h"
-#import "IPArtist.h"
-#import "IPPlayable.h"
 
 @interface IPMediaInspector : NSObject
 

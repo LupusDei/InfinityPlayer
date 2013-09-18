@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #define SimpleCellID @"SimpleCell"
+#define SimpleCellHeight 54
 
 @interface IPSimpleCell : UITableViewCell
 
@@ -15,4 +16,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *subtitleLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *albumArtImageView;
 
+-(void) formatCellForArtistWithName:(NSString *)name;
+-(void) formatCellForSongWithTitle:(NSString *)title andArtistName:(NSString *)name;
+-(void) formatCellForAlbumWithTitle:(NSString *)title andArtistName:(NSString *)name;
 @end

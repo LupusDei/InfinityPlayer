@@ -7,7 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
+
 #import "IPAlbum.h"
+
 #import "IPUIConstants.h"
 #import "IPMockHelper.h"
 #import "IPMockMediaItemCollection.h"
