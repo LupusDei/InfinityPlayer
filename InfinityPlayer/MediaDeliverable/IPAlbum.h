@@ -7,12 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IPPlayable.h"
+#import "IPMediaContainer.h"
 
-@interface IPAlbum : NSObject
-@property (nonatomic, strong) MPMediaItemCollection *itemCollection;
-@property (nonatomic, strong) NSArray *songs;
-
+@interface IPAlbum : IPMediaContainer
 +(IPAlbum *) albumWithMediaCollection:(MPMediaItemCollection *)itemCol;
 
 -(NSString *)title;

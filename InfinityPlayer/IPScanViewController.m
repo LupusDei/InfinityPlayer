@@ -36,8 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    self.mediaItemCollections = [IPMediaInspector getAllMediaGroupedByAlbum];
     self.playables = [NSMutableArray arrayWithCapacity:[self.mediaItemCollections count]];
     
     [self.mediaItemCollections enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {

@@ -7,20 +7,10 @@
 //
 
 #import "IPMediaInspector.h"
-#import "IPAlbum.h"
 
 @implementation IPMediaInspector
 
-+(NSArray *)getAllMedia {
-    MPMediaQuery *query = [[MPMediaQuery alloc] init];
-    return [query collections];
-}
-
-+(NSArray *) getAllMediaGroupedByAlbum {
-    MPMediaQuery *query = [MPMediaQuery albumsQuery];
-    return [query collections];
-}
-
+#pragma mark Albums
 +(MPMediaQuery *) queryForAlbumsWithSearchTitle:(NSString *)title {
     MPMediaQuery *query = [MPMediaQuery albumsQuery];
     MPMediaPredicate *pred = [MPMediaPropertyPredicate predicateWithValue:title forProperty:MPMediaItemPropertyAlbumTitle comparisonType:MPMediaPredicateComparisonContains];
@@ -38,16 +28,27 @@
     return [IPMediaInspector albumsFromItemCollections:[[IPMediaInspector queryForAlbumsWithSearchTitle:title] collections]];
 }
 
+#pragma mark Artists
 +(MPMediaQuery *) queryForArtistsWithSearchName:(NSString *)name {
     MPMediaQuery *query = [MPMediaQuery artistsQuery];
     MPMediaPredicate *pred = [MPMediaPropertyPredicate predicateWithValue:name forProperty:MPMediaItemPropertyArtist comparisonType:MPMediaPredicateComparisonContains];
     [query addFilterPredicate:pred];
     return query;
 }
-+(NSArray *) getAllArtistsWithSearchName:(NSString *)name {
-    return [[IPMediaInspector queryForArtistsWithSearchName:name] collections];
+
++(NSArray *)artistsFromItemCollections:(NSArray *)itemCols {
+    NSMutableArray *artists = [NSMutableArray arrayWithCapacity:[itemCols count]];
+    [itemCols enumerateObjectsUsingBlock:^(MPMediaItemCollection *itemCol, NSUInteger idx, BOOL *stop) {
+        [artists addObject:[IPArtist artistWithMediaCollection:itemCol]];
+    }];
+    return artists;
 }
 
++(NSArray *) getAllArtistsWithSearchName:(NSString *)name {
+    return [IPMediaInspector artistsFromItemCollections:[[IPMediaInspector queryForArtistsWithSearchName:name] collections]];
+}
+
+#pragma mark Songs
 +(MPMediaQuery *) queryForSongsWithSearchTitle:(NSString *)title {
     MPMediaQuery *query = [MPMediaQuery songsQuery];
     MPMediaPredicate *pred = [MPMediaPropertyPredicate predicateWithValue:title forProperty:MPMediaItemPropertyTitle comparisonType:MPMediaPredicateComparisonContains];

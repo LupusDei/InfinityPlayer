@@ -8,16 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "IPAlbum.h"
+#import "IPArtist.h"
+#import "IPPlayable.h"
 
 @interface IPMediaInspector : NSObject
 
-+(NSArray *) getAllMedia;
-+(NSArray *) getAllMediaGroupedByAlbum;
 +(MPMediaQuery *) queryForAlbumsWithSearchTitle:(NSString *)title;
 +(NSArray *) albumsFromItemCollections:(NSArray *)itemCols;
 +(NSArray *) getAllAlbumsWithSearchTitle:(NSString *)title;
 
 +(MPMediaQuery *) queryForArtistsWithSearchName:(NSString *)name;
++(NSArray *) artistsFromItemCollections:(NSArray *)itemCols;
 +(NSArray *) getAllArtistsWithSearchName:(NSString *)name;
 
 +(MPMediaQuery *) queryForSongsWithSearchTitle:(NSString *)title;

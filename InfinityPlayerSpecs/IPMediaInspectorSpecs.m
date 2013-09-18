@@ -87,4 +87,11 @@
     XCTAssertEqual([IPPlayable class],[[songs objectAtIndex:0] class], @"it is a playable");
     XCTAssertEqual([IPPlayable class],[[songs objectAtIndex:1] class], @"it is a playable");
 }
+-(void) testItReturnsArtistsWhenSearchingForArtists {
+    NSArray *fakeArtistQueryResponse = @[[IPMockHelper itemCollectionWithSingleItem], [IPMockHelper itemCollectionWithOtherItem]];
+    NSArray *artists = [IPMediaInspector artistsFromItemCollection:fakeArtistQueryResponse];
+    
+    XCTAssertEqual([IPArtist class],[[artists objectAtIndex:0] class], @"it is an artist");
+    XCTAssertEqual([IPArtist class],[[artists objectAtIndex:1] class], @"it is an artist");
+}
 @end
