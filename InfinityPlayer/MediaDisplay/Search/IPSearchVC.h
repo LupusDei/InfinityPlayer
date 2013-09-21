@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IPAbstractVC.h"
 
-@interface IPSearchVC : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface IPSearchVC : IPAbstractVC <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @end

@@ -23,7 +23,8 @@
 @property (nonatomic, strong) IPMediaPlayer *player;
 @end
 
-@implementation IPScanViewController
+@implementation IPScanViewController {
+}
 
 +(IPScanViewController *) playerVCWithPlayables:(NSArray *)playables {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
@@ -50,6 +51,12 @@
     [self.currentSongCollectionView registerClass:[IPSongCVCell class] forCellWithReuseIdentifier:SongCellID];
     
     self.player = [[IPMediaPlayer alloc] init];
+    NSMutableArray *items = [NSMutableArray arrayWithCapacity:[self.playables count]];
+    [self.playables enumerateObjectsUsingBlock:^(IPPlayable *playable, NSUInteger idx, BOOL *stop) {
+        [items addObject:playable.item];
+    }];
+    [self.player.myPlayer setQueueWithItemCollection:[MPMediaItemCollection collectionWithItems:items]];
+    [self.player.myPlayer play];
 }
 
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -60,8 +67,7 @@
     IPSongCVCell *cell = [self.currentSongCollectionView dequeueReusableCellWithReuseIdentifier:SongCellID forIndexPath:indexPath];
     IPPlayable *playable = [self.playables objectAtIndex:indexPath.row];
     
-    [self.player.myPlayer setQueueWithItemCollection:[MPMediaItemCollection collectionWithItems:@[playable.item]]];
-    [self.player.myPlayer play];
+    
     [cell.artistLabel setText:playable.artistName];
     [cell.songTitleLabel setText:playable.title];
 

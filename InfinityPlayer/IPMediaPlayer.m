@@ -10,12 +10,22 @@
 
 @implementation IPMediaPlayer
 
++(IPMediaPlayer *) mediaPlayer {
+    return [[IPMediaPlayer alloc] init];
+}
+
 -(id) init {
     self = [super init];
     if (self) {
-        self.myPlayer = [MPMusicPlayerController applicationMusicPlayer];
+        self.myPlayer = [MPMusicPlayerController iPodMusicPlayer];
+        self.itemQueue = [NSMutableArray array];
     }
     return self;
+}
+
+-(void) addSongToQueue:(IPPlayable *)song {
+    [self.itemQueue addObject:song];
+    [self.myPlayer setQueueWithItemCollection:<#(MPMediaItemCollection *)#>]
 }
 
 @end

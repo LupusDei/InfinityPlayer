@@ -33,6 +33,11 @@
 		6235CCEC17D2B9B10094229D /* IPPlayableSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCC517D2AFF80094229D /* IPPlayableSpec.m */; };
 		6235CCEF17D2CDC10094229D /* IPAlbumArtCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCEE17D2CDC10094229D /* IPAlbumArtCache.m */; };
 		6235CCF517D2D3B80094229D /* IPGaussianBlurEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6235CCF417D2D3B80094229D /* IPGaussianBlurEngine.m */; };
+		6264291117EE54310089FA0C /* back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6264291017EE54310089FA0C /* back_button@2x.png */; };
+		6264291417EE54A10089FA0C /* IPNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6264291317EE54A10089FA0C /* IPNavigationVC.m */; };
+		6264291717EE55530089FA0C /* IPAbstractVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6264291617EE55530089FA0C /* IPAbstractVC.m */; };
+		6264291917EE5AC00089FA0C /* IPMediaPlayerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6264291817EE5AC00089FA0C /* IPMediaPlayerSpec.m */; };
+		6264291C17EE5FA90089FA0C /* IPMPMusicPlayerSpy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6264291B17EE5FA90089FA0C /* IPMPMusicPlayerSpy.m */; };
 		626FDE0D17C153480088B7FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0C17C153480088B7FF /* UIKit.framework */; };
 		626FDE0F17C153480088B7FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE0E17C153480088B7FF /* Foundation.framework */; };
 		626FDE1117C153480088B7FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626FDE1017C153480088B7FF /* CoreGraphics.framework */; };
@@ -108,6 +113,14 @@
 		6235CCEE17D2CDC10094229D /* IPAlbumArtCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAlbumArtCache.m; sourceTree = "<group>"; };
 		6235CCF317D2D3B80094229D /* IPGaussianBlurEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPGaussianBlurEngine.h; sourceTree = "<group>"; };
 		6235CCF417D2D3B80094229D /* IPGaussianBlurEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPGaussianBlurEngine.m; sourceTree = "<group>"; };
+		6264291017EE54310089FA0C /* back_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@2x.png"; sourceTree = "<group>"; };
+		6264291217EE54A10089FA0C /* IPNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPNavigationVC.h; path = MediaDisplay/IPNavigationVC.h; sourceTree = "<group>"; };
+		6264291317EE54A10089FA0C /* IPNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPNavigationVC.m; path = MediaDisplay/IPNavigationVC.m; sourceTree = "<group>"; };
+		6264291517EE55530089FA0C /* IPAbstractVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPAbstractVC.h; path = MediaDisplay/IPAbstractVC.h; sourceTree = "<group>"; };
+		6264291617EE55530089FA0C /* IPAbstractVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPAbstractVC.m; path = MediaDisplay/IPAbstractVC.m; sourceTree = "<group>"; };
+		6264291817EE5AC00089FA0C /* IPMediaPlayerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPMediaPlayerSpec.m; sourceTree = "<group>"; };
+		6264291A17EE5FA90089FA0C /* IPMPMusicPlayerSpy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPMPMusicPlayerSpy.h; sourceTree = "<group>"; };
+		6264291B17EE5FA90089FA0C /* IPMPMusicPlayerSpy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPMPMusicPlayerSpy.m; sourceTree = "<group>"; };
 		626FDE0917C153480088B7FF /* InfinityPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfinityPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		626FDE0C17C153480088B7FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		626FDE0E17C153480088B7FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -208,6 +221,10 @@
 			children = (
 				627305CA17D7FD2A00D1DDF2 /* Search */,
 				6235CCC417D26EF90094229D /* CurrentTrack */,
+				6264291217EE54A10089FA0C /* IPNavigationVC.h */,
+				6264291317EE54A10089FA0C /* IPNavigationVC.m */,
+				6264291517EE55530089FA0C /* IPAbstractVC.h */,
+				6264291617EE55530089FA0C /* IPAbstractVC.m */,
 			);
 			name = MediaDisplay;
 			sourceTree = "<group>";
@@ -228,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				627305D117D946DF00D1DDF2 /* searchInputBorder@2x.png */,
+				6264291017EE54310089FA0C /* back_button@2x.png */,
 				622B94E417C84FA100B71523 /* icons */,
 				6232348217C1A999002BE554 /* AlbumArt */,
 			);
@@ -303,6 +321,8 @@
 				627305E317DBB7B500D1DDF2 /* IPMockMediaItemCollection.m */,
 				627305E517DBC6A100D1DDF2 /* IPMockHelper.h */,
 				627305E617DBC6A100D1DDF2 /* IPMockHelper.m */,
+				6264291A17EE5FA90089FA0C /* IPMPMusicPlayerSpy.h */,
+				6264291B17EE5FA90089FA0C /* IPMPMusicPlayerSpy.m */,
 			);
 			name = Mocks;
 			path = ../InfinityPlayerTest;
@@ -317,6 +337,7 @@
 				6235CCCA17D2B0F60094229D /* Mocks */,
 				6235CCDC17D2B9470094229D /* Supporting Files */,
 				6219044517E91813002ECC07 /* IPArtistSpec.m */,
+				6264291817EE5AC00089FA0C /* IPMediaPlayerSpec.m */,
 			);
 			path = InfinityPlayerSpecs;
 			sourceTree = "<group>";
@@ -463,6 +484,11 @@
 					};
 					626FDE0817C153480088B7FF = {
 						DevelopmentTeam = 2BRYAM5Q52;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -500,6 +526,7 @@
 				626FDE1717C153480088B7FF /* InfoPlist.strings in Resources */,
 				626FDE1F17C153480088B7FF /* Default.png in Resources */,
 				622B94E217C836D700B71523 /* chronic.png in Resources */,
+				6264291117EE54310089FA0C /* back_button@2x.png in Resources */,
 				627305DC17DB906A00D1DDF2 /* IPSimpleCell.xib in Resources */,
 				622B94E317C836D700B71523 /* MurakKanye.png in Resources */,
 				626FDE2117C153480088B7FF /* Default@2x.png in Resources */,
@@ -520,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6264291C17EE5FA90089FA0C /* IPMPMusicPlayerSpy.m in Sources */,
 				627305E417DBB7B500D1DDF2 /* IPMockMediaItemCollection.m in Sources */,
 				627305DA17DA904B00D1DDF2 /* IPMediaInspectorSpecs.m in Sources */,
 				6219044617E91813002ECC07 /* IPArtistSpec.m in Sources */,
@@ -527,6 +555,7 @@
 				6235CCEC17D2B9B10094229D /* IPPlayableSpec.m in Sources */,
 				627305E717DBC6A100D1DDF2 /* IPMockHelper.m in Sources */,
 				6235CCE917D2B9A30094229D /* IPMockMediaItem.m in Sources */,
+				6264291917EE5AC00089FA0C /* IPMediaPlayerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +570,7 @@
 				62C0857817CADC6700CFA8AB /* IPMediaPlayer.m in Sources */,
 				6219044917E91C94002ECC07 /* IPMediaContainer.m in Sources */,
 				627305E117DBB44900D1DDF2 /* IPAlbum.m in Sources */,
+				6264291717EE55530089FA0C /* IPAbstractVC.m in Sources */,
 				62A38BFA17D17AC700B401F3 /* UIView+SizeHelper.m in Sources */,
 				62C2C6E617C17B8D00478B15 /* IPMediaInspector.m in Sources */,
 				627305D817DA802900D1DDF2 /* IPSearchTabView.m in Sources */,
@@ -549,6 +579,7 @@
 				62C2C6EE17C1805E00478B15 /* IPScanViewController.m in Sources */,
 				6235CCF517D2D3B80094229D /* IPGaussianBlurEngine.m in Sources */,
 				6232348C17C1AA8E002BE554 /* IPSongCVCell.m in Sources */,
+				6264291417EE54A10089FA0C /* IPNavigationVC.m in Sources */,
 				6235CCC017D25B950094229D /* IPBlackOverlayView.m in Sources */,
 				627305D017D944D900D1DDF2 /* IPSimpleCell.m in Sources */,
 				6235CCCD17D2B40E0094229D /* IPPlayable.m in Sources */,

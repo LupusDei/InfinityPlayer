@@ -58,20 +58,11 @@ typedef void (^IPMediaCellSetup)(IPSimpleCell *cell, id mediaItem);
     self.mediaTableView.delegate = self;
     self.mediaTableView.dataSource = self;
     [self.mediaTableView registerClass:[IPSimpleCell class] forCellReuseIdentifier:SimpleCellID];
-//    [self.mediaTableView registerNib:[UINib nibWithNibName:@"IPSimpleCell" bundle:nil] forCellReuseIdentifier:SimpleCellID];
 
     [searchbar setDelegate:self];
     selectedMediaForm = 1;
     searchableString = @"";
     [self songTabSelected];
-    
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark TableView Stuff
@@ -96,8 +87,8 @@ typedef void (^IPMediaCellSetup)(IPSimpleCell *cell, id mediaItem);
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    IPPlayable *mediaItem = [self.media objectAtIndex:indexPath.row];
-    IPScanViewController *vc = [IPScanViewController playerVCWithPlayables:@[mediaItem]];
+    NSArray *items = [self.media objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(indexPath.row, [self.media count] - indexPath.row - 1)]];
+    IPScanViewController *vc = [IPScanViewController playerVCWithPlayables:items];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

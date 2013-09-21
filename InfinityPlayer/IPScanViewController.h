@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IPAbstractVC.h"
 
-@interface IPScanViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface IPScanViewController : IPAbstractVC <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *currentSongCollectionView;
 @property (nonatomic, strong) NSArray *playables;
 
