@@ -11,11 +11,23 @@
 #import "IPPlayable.h"
 @interface IPMediaPlayer : NSObject
 @property NSMutableArray *itemQueue;
-@property int currentIndex;
+
 @property (nonatomic, strong) MPMusicPlayerController *myPlayer;
 
 +(IPMediaPlayer *) mediaPlayer;
+-(instancetype) initWithMusicPlayer:(MPMusicPlayerController *)player;
+
+-(BOOL) isPlaying;
+
+-(void) play;
+-(void) pause;
+-(void) stop;
+-(void) skipToNextSong;
+-(void) skipToPreviousSong;
+
+-(IPPlayable *) getCurrentSong;
 
 -(void) addSongToQueue:(IPPlayable *)song;
+-(void) addSongsToQueue:(NSArray *)songs;
 
 @end
